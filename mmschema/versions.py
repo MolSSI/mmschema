@@ -37,7 +37,9 @@ def get_schema(schema_type, version="dev"):
         version = 2
     else:
         raise KeyError(
-            "Schema type should be among {} (+aliases), not '{}'.".format(list(_aliases.keys()), schema_type)
+            "Schema type should be among {} (+aliases), not '{}'.".format(
+                list(_aliases.keys()), schema_type
+            )
         )
 
     fpath = _data_path / ("v" + str(version)) / (fname + ".schema")
