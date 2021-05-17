@@ -28,9 +28,13 @@ import gen_schema_docs
 import datetime
 
 
+# Mol
 gen_schema_docs.gen_rst("Molecule")
-gen_schema_docs.gen_rst("ForceField")
 
+# FF
+gen_schema_docs.gen_rst("ForceField")
+gen_schema_docs.gen_rst("NonBonded")
+gen_schema_docs.gen_rst("Bonds")
 
 project = "MMSchema"
 copyright = (
