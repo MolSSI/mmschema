@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,10 +48,10 @@
   
   
     <title>Technical Discussion &#8212; MMSchema</title>
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="static/material.css" />
     <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
-    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
     <script src="static/jquery.js"></script>
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
@@ -358,12 +359,12 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="technical-discussion">
 <h1 id="tech-discussion--page-root">Technical Discussion<a class="headerlink" href="#tech-discussion--page-root" title="Permalink to this headline">¶</a></h1>
 <p>This document contains various technical considerations that are both open and those which have been discussed and closed.</p>
-
+<section id="open-questions">
 <h2 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permalink to this headline">¶</a></h2>
-
+<section id="how-do-we-reference-other-objects">
 <h3 id="how-do-we-reference-other-objects">How do we reference other objects?<a class="headerlink" href="#how-do-we-reference-other-objects" title="Permalink to this headline">¶</a></h3>
 <p>JSON does not directly support object references. This makes it non-trivial to,
 say, maintain a list of bonds between atoms. Some solutions are:</p>
@@ -382,8 +383,8 @@ than unique keys.</p>
 <p>We need to look at this beyond atoms and bonds. Especially in workflows we can reuse pieces of data
 from previous tasks in the workflow. Instead of repeating we can use referencing.</p>
 <p>See also: <a class="reference external" href="http://stackoverflow.com/q/4001474/1958900">http://stackoverflow.com/q/4001474/1958900</a></p>
-
-
+</section>
+<section id="how-do-we-uniquely-specify-physical-units">
 <h3 id="how-do-we-uniquely-specify-physical-units">How do we uniquely specify physical units?<a class="headerlink" href="#how-do-we-uniquely-specify-physical-units" title="Permalink to this headline">¶</a></h3>
 <p>For instance, velocity might be “angstrom/fs” Alternatives:</p>
 <blockquote>
@@ -399,8 +400,8 @@ link to the actual standards definition. Some examples in CML:</p>
 <span class="s2">"shieldingAnisotropy"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"units"</span><span class="p">:</span> <span class="s2">"ppm"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span> <span class="mf">17.5292</span><span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="json-and-hdf5">
 <h3 id="json-and-hdf5">JSON and HDF5<a class="headerlink" href="#json-and-hdf5" title="Permalink to this headline">¶</a></h3>
 <p>The object specifications in this document are tailored to JSON, but can be
 easily stored in an HDF5 file as well. HDF5 is, like JSON, hierarchical and
@@ -412,11 +413,11 @@ better performance and storage characteristics for numerical data. We will
 provide tools to easily interconvert files between JSON and HDF5. Applications
 that support this format should always provide JSON support; ones that require
 high performance should also support the HDF5 variant.</p>
-
-
-
+</section>
+</section>
+<section id="closed-questions">
 <h2 id="closed-questions">Closed Questions<a class="headerlink" href="#closed-questions" title="Permalink to this headline">¶</a></h2>
-
+<section id="store-large-collections-of-objects">
 <h3 id="store-large-collections-of-objects">Store large collections of objects<a class="headerlink" href="#store-large-collections-of-objects" title="Permalink to this headline">¶</a></h3>
 <p>There exists multiple ways to arrange data which represents objects. These expressions come down to two primary categories:</p>
 <p>The “big” approach where each field is a flat (1D) array for each category:</p>
@@ -446,9 +447,9 @@ high performance should also support the HDF5 variant.</p>
 </ul>
 </dd>
 </dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -497,7 +498,7 @@ high performance should also support the HDF5 variant.</p>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
