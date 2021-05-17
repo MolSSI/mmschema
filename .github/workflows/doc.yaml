@@ -48,9 +48,7 @@ jobs:
     - name: Build docs
       shell: bash -l {0}
       run: |
-        if [ -d docs ]; then rm -r docs; fi
-        mkdir docs
-        cd _docs && bash build.sh
+        cd .docs && bash build.sh
 
     - name: Commit documentation changes
       shell: bash -l {0}
@@ -65,5 +63,5 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        branch: docs
+        branch: ${{ github.ref }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
