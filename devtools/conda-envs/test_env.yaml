@@ -16,3 +16,5 @@ dependencies:
     - pydantic
     - git+https://github.com/MolSSI/cmselemental.git@dev
     - git+https://github.com/MolSSI/mmelemental.git
+    - sphinx
+    - sphinx-material
