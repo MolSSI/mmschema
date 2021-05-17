@@ -66,7 +66,18 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :caption: Schemas
-   
+   :caption: Topology
+ 
    auto_molecule
+
+.. toctree::
+   :maxdepth: 1
+   :caption: ForceField
+
    auto_forcefield
+   auto_nonbonded
+   auto_bonds
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Collection Schemas
