@@ -1,27 +1,27 @@
 """
-The json-schema for the NonBonded model definition
+The json-schema for the Bonds model definition
 """
 
-__all__ = ["NonBonded"]
+__all__ = ["Bonds"]
 
 
-NonBonded = {
-    "title": "NonBonded",
+Bonds = {
+    "title": "Bonds",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "name": "mmschema_nonbonded",
+    "name": "mmschema_bonds",
     "version": "0.dev",
-    "description": "Model that describes non-bonded interactions between particles.",
+    "description": "Model that describes bonded (2-body) interactions between particles.",
     "type": "object",
     "properties": {
         "schema_name": {
             "type": "string",
-            "pattern": "^(mmschema_nonbonded)$",
+            "pattern": "^(mmschema_bonds)$",
         },
         "schema_version": {"type": "integer"},
         "form": {"description": "Name or form of the potential.", "type": "string"},
         "params": {
-            "title": "Params",
             "type": "object",
+            "title": "Params",
             "description": "Specific force field parameters model.",
         },
     },
