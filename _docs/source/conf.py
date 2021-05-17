@@ -95,7 +95,7 @@ pygments_style = "sphinx"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_material" #"asteroid_sphinx_theme"
+html_theme = "sphinx_material"  # "asteroid_sphinx_theme"
 html_title = "MMSchema"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -107,10 +107,10 @@ html_theme_options = {
     "color_accent": "light-black",
     "repo_url": "https://github.com/MolSSI/mmschema",
     "repo_name": "mmschema",
-    'globaltoc_depth': 1,
-    'globaltoc_collapse': False,
-    'globaltoc_includehidden': True,
-    'logo_icon': '&#9783',
+    "globaltoc_depth": 1,
+    "globaltoc_collapse": False,
+    "globaltoc_includehidden": True,
+    "logo_icon": "&#9783",
 }
 
 html_sidebars = {

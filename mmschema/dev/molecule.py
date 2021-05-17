@@ -29,19 +29,28 @@ Molecule = {
             "type": "array",
             "items": {"type": "number"},
         },
-        "geometry_units": {"description": "Geometry units. Any spatial unit available in pint is supported.", "type": "string"},
+        "geometry_units": {
+            "description": "Geometry units. Any spatial unit available in pint is supported.",
+            "type": "string",
+        },
         "velocities": {
             "description": "(ndim * natom, ) vector of [X,Y,Z] velocities of the particles.",
             "type": "array",
             "items": {"type": "number"},
         },
-        "velocities_units": {"description": "Velocities units. Any speed unit available in pint is supported.", "type": "string"},
+        "velocities_units": {
+            "description": "Velocities units. Any speed unit available in pint is supported.",
+            "type": "string",
+        },
         "masses": {
             "description": "(natom, ) atom masses; if not given, canonical weights are assumed for atomic particles.",
             "type": "array",
             "items": {"type": "number"},
         },
-        "masses_units": {"description": "Masses units. Any mass unit available in pint is supported.", "type": "string"},
+        "masses_units": {
+            "description": "Masses units. Any mass unit available in pint is supported.",
+            "type": "string",
+        },
         "atomic_numbers": {
             "description": "(natom, ) atomic numbers, nuclear charge for atoms.",
             "type": "array",
@@ -67,7 +76,10 @@ Molecule = {
             "type": "number",
             "default": 0.0,
         },
-        "molecular_charge_units": {"description": "Molecular charge units. Any charge unit available in pint is supported.", "type": "string"},
+        "molecular_charge_units": {
+            "description": "Molecular charge units. Any charge unit available in pint is supported.",
+            "type": "string",
+        },
         "connectivity": {
             "description": "A list describing bonds within a molecule. Each element is a (atom1, atom2, order) tuple.",
             "guidance": "Bonds may be freely reordered and inverted.",

@@ -42,7 +42,7 @@ def write_key_table(top_file, properties, keys=None):
 
     if keys is None:
         keys = properties.keys()
-    keys = sorted(keys) # Alphabetical sorting looks better IMO
+    keys = sorted(keys)  # Alphabetical sorting looks better IMO
 
     for key in keys:
         value = properties[key]

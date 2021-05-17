@@ -8,6 +8,7 @@ sys.path.insert(1, os.path.dirname(__file__))
 import schema_doc_helpers as sh
 import mmschema.dev
 
+
 def gen_rst(model_name, mode="w", filename=None):
 
     model = getattr(mmschema.dev, model_name)
@@ -22,7 +23,6 @@ def gen_rst(model_name, mode="w", filename=None):
     mfile.extend(
         f"""A full description of the overall {model_name} model.""".splitlines()
     )
-
 
     props = model["properties"]
     req = model["required"]

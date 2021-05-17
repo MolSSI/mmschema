@@ -100,6 +100,6 @@ molecule_dev_schema = copy.deepcopy(molecule.molecule)
 # Build out the basis schema
 basis_dev_schema = copy.deepcopy(basis.basis)
 
-#import json
-#print(json.dumps(input_dev_schema, indent=4))
-#print(json.dumps(output_dev_schema, indent=2))
+# import json
+# print(json.dumps(input_dev_schema, indent=4))
+# print(json.dumps(output_dev_schema, indent=2))
