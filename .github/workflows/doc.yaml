@@ -48,6 +48,7 @@ jobs:
     - name: Build docs
       shell: bash -l {0}
       run: |
+        rm -r docs
         cd _docs && bash build.sh
 
     - name: Commit documentation changes
@@ -55,7 +56,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions[bot]"
-        rm -r docs/*
         git add docs
         git commit -m "Update documentation" -a || true
         # The above command will fail if no changes were present, so we ignore
