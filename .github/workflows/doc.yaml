@@ -48,7 +48,7 @@ jobs:
     - name: Build docs
       shell: bash -l {0}
       run: |
-        rm -r docs
+        if [ -f docs ]; then rm -r docs; fi
         cd _docs && bash build.sh
 
     - name: Commit documentation changes
