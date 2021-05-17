@@ -12,6 +12,7 @@ dependencies:
 
     # Pip-only installs
   - pip:
+    - jsonschema
     - codecov
     - pydantic
     - git+https://github.com/MolSSI/cmselemental.git@dev
