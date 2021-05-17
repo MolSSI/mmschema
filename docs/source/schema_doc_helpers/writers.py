@@ -4,10 +4,17 @@ A small module to assist in the writing of RST
 import textwrap
 
 
-def write_header(data, header):
+def write_subsection(data, header):
     data.append("")
     data.append(header)
     data.append("-" * len(header))
+    data.append("")
+
+
+def write_subsubsection(data, header):
+    data.append("")
+    data.append(header)
+    data.append("^" * len(header))
     data.append("")
 
 
@@ -40,7 +47,15 @@ def write_key_table(top_file, properties, keys=None):
     for key in keys:
         value = properties[key]
 
-        dtype = value["type"]
+        if "anyOf" in value:
+            value = value["anyOf"][1]
+
+        if "type" in value:
+            dtype = value["type"]
+        elif "$ref" in value:
+            dtype = value["$ref"]
+        else:
+            raise ValueError(f"type not found in {key}")
 
         if "description" in value:
             description = value["description"]
@@ -49,8 +64,14 @@ def write_key_table(top_file, properties, keys=None):
         else:
             description = "No description provided."
 
-        if value["type"] == "array":
-            dtype = "array[" + value["items"]["type"] + "]"
+        if dtype == "array":
+            if "type" in value["items"]:
+                arr_type = value["items"]["type"]
+            elif "$ref" in value["items"]:
+                arr_type = value["items"]["$ref"]
+            else:
+                raise ValueError(f"No dtype for items in array {key}")
+            dtype = "array[" + arr_type + "]"
 
         # Figure out the needed slices
 
