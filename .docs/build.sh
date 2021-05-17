@@ -1,5 +1,5 @@
-if [ -f _build ]; then rm -r _build; fi
-if [ -f build ]; then rm -r build; fi
+if [ -d _build ]; then rm -r _build; fi
+if [ -d build ]; then rm -r build; fi
 
 make html
 cd _build/html
@@ -12,4 +12,5 @@ for d in _* ; do
 done
 
 cd ../..
-cp -r _build/html/* ../docs/
+if [ -d ../docs ]; then rm -r ../docs; fi
+cp -r _build/html ../docs
