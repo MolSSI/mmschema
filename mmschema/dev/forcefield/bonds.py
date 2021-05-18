@@ -1,8 +1,11 @@
 """
 The json-schema for the Bonds model definition
 """
+import mmelemental
+import sys
 
 __all__ = ["Bonds"]
+current_module = sys.modules[__name__]
 
 
 Bonds = {
@@ -28,3 +31,10 @@ Bonds = {
     "required": ["form", "params"],
     "additionalProperties": False,
 }
+
+for (
+    name,
+    obj,
+) in mmelemental.models.forcefield.bonded.Bonds.supported_potentials().items():
+    __all__.append(name)
+    setattr(current_module, name, obj.schema())
