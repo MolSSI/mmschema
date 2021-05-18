@@ -26,6 +26,7 @@ import os
 sys.path.insert(1, os.path.dirname(__file__))
 import gen_schema_docs
 import datetime
+import mmschema
 
 
 # Mol
@@ -34,7 +35,12 @@ gen_schema_docs.gen_rst("Molecule")
 # FF
 gen_schema_docs.gen_rst("ForceField")
 gen_schema_docs.gen_rst("NonBonded")
+for name in mmschema.dev.forcefield.nonbonded.__all__:
+    if name != "NonBonded":
+        gen_schema_docs.gen_rst(name, mode="a", filename="auto_nonbonded.rst")
+
 gen_schema_docs.gen_rst("Bonds")
+gen_schema_docs.gen_rst("Harmonic", mode="a", filename="auto_bonds.rst")
 
 project = "MMSchema"
 copyright = (
@@ -108,7 +114,7 @@ html_theme_options = {
     "repo_url": "https://github.com/MolSSI/mmschema",
     "repo_name": "mmschema",
     "globaltoc_depth": 1,
-    "globaltoc_collapse": False,
+    "globaltoc_collapse": True,  # False,
     "globaltoc_includehidden": True,
     "logo_icon": "&#9783",
 }
