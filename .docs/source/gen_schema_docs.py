@@ -13,13 +13,13 @@ def gen_rst(model_name, mode="w", filename=None):
 
     model = getattr(mmschema.dev, model_name)
 
-    mfile = [f"{model_name} Schema"]
-
     if mode == "w":
+        mfile = [f"{model_name} schema"]
         mfile.append("=" * len(mfile[-1]))
     else:
-        mfile.append("^" * len(mfile[-1]))
+        mfile = []
 
+    sh.write_subsection(mfile, model_name)
     mfile.extend(
         f"""A full description of the overall {model_name} model.""".splitlines()
     )
