@@ -40,7 +40,9 @@ for name in mmschema.dev.forcefield.nonbonded.__all__:
         gen_schema_docs.gen_rst(name, mode="a", filename="auto_nonbonded.rst")
 
 gen_schema_docs.gen_rst("Bonds")
-gen_schema_docs.gen_rst("Harmonic", mode="a", filename="auto_bonds.rst")
+for name in mmschema.dev.forcefield.bonds.__all__:
+    if name != "Bonds":
+        gen_schema_docs.gen_rst(name, mode="a", filename="auto_bonds.rst")
 
 project = "MMSchema"
 copyright = (
