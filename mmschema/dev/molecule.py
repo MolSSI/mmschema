@@ -1,6 +1,9 @@
 """
 The json-schema for the Molecule definition
 """
+
+__all__ = ["Molecule"]
+
 Molecule = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "name": "mmschema_molecule",
