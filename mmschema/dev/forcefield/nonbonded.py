@@ -1,7 +1,10 @@
 """
 The json-schema for the NonBonded model definition
 """
+import mmelemental
+import sys
 
+current_module = sys.modules[__name__]
 __all__ = ["NonBonded"]
 
 
@@ -28,3 +31,10 @@ NonBonded = {
     "required": ["form", "params"],
     "additionalProperties": False,
 }
+
+for (
+    name,
+    obj,
+) in mmelemental.models.forcefield.nonbonded.NonBonded.supported_potentials().items():
+    __all__.append(name)
+    setattr(current_module, name, obj.schema())
