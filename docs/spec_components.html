@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,10 +48,10 @@
   
   
     <title>Specification Components &#8212; MMSchema</title>
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="static/material.css" />
     <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
-    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
     <script src="static/jquery.js"></script>
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
@@ -382,14 +383,14 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="specification-components">
 <h1 id="spec-components--page-root">Specification Components<a class="headerlink" href="#spec-components--page-root" title="Permalink to this headline">¶</a></h1>
 <p>A brief overview of the fields present in the QC Schema is contained below.
 It should be noted that a significant amount of customization can be added to each
 field, please see the Schema or Examples document section for further information.</p>
-
+<section id="input-components">
 <h2 id="input-components">Input Components<a class="headerlink" href="#input-components" title="Permalink to this headline">¶</a></h2>
-
+<section id="topology">
 <h3 id="topology">Topology<a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h3>
 <p>The closest representation to the real physical nature of the system. In
 practical terms, for molecular sciences, this is the coordinates (in some form)
@@ -411,8 +412,8 @@ calculation.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="driver">
 <h3 id="driver">Driver<a class="headerlink" href="#driver" title="Permalink to this headline">¶</a></h3>
 <p>What are you looking to calculate: energy, gradient, Hessian, or property.</p>
 <p>A energy call:</p>
@@ -421,8 +422,8 @@ calculation.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="model">
 <h3 id="model">Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
 <p>The overall mathematical model we are using for our calculation. Another way to
 think about this is the largest superset that still obtains roughly the same
@@ -438,8 +439,8 @@ basis sets can be handled with custom keywords.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="keywords">
 <h3 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
 <p>Various tunable parameters for the calculation. These vary widely, depending on
 the basis and model chemistry. These represent the keywords of individual programs currently.</p>
@@ -452,15 +453,15 @@ the basis and model chemistry. These represent the keywords of individual progra
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
-
+</section>
+</section>
+<section id="output-components">
 <h2 id="output-components">Output Components<a class="headerlink" href="#output-components" title="Permalink to this headline">¶</a></h2>
-
+<section id="id1">
 <h3 id="id1">Input Components<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The input components are duplicated in the output so that the result is a complete trace of the requested computation from input specification to results.</p>
-
-
+</section>
+<section id="success">
 <h3 id="success">Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h3>
 <p>A description if the computation was successful or not. For unsuccessful computations standard errors will be placed in the output such as convergence, IO errors, etc.</p>
 <p>A successful example:</p>
@@ -479,8 +480,8 @@ the basis and model chemistry. These represent the keywords of individual progra
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="returned-result">
 <h3 id="returned-result">Returned Result<a class="headerlink" href="#returned-result" title="Permalink to this headline">¶</a></h3>
 <p>The “primary” return of a given computation. For energy, gradient, and Hessian quantities these are either single numbers or a array representing the derivative quantity.</p>
 <p>A simple “energy” driver example:</p>
@@ -489,8 +490,8 @@ the basis and model chemistry. These represent the keywords of individual progra
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="provenance">
 <h3 id="provenance">Provenance<a class="headerlink" href="#provenance" title="Permalink to this headline">¶</a></h3>
 <p>A brief description of the program, version, and routine used to generate the output. Can
 include more detailed information such as computation time, processor information, and host location.</p>
@@ -503,8 +504,8 @@ include more detailed information such as computation time, processor informatio
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
+</section>
+<section id="properties">
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <p>A set of intermediate values produced by the QM program such as the one-electron and two-electron energies in SCF.
 In addition, this will include such values such as the number of atomic orbitals and the number of alpha and beta electrons.</p>
@@ -543,13 +544,13 @@ In addition, this will include such values such as the number of atomic orbitals
 <li><p><a class="reference external" href="http://www.codessa-pro.com/descriptors/quantum/eee.htm">Codessa</a></p></li>
 </ul>
 </div></blockquote>
-
-
+</section>
+<section id="basis-quantities">
 <h3 id="basis-quantities">Basis Quantities<a class="headerlink" href="#basis-quantities" title="Permalink to this headline">¶</a></h3>
 <p>The schema supports the export of basis quantities such as the overlap matrix or the orbitals. TBD</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -598,7 +599,7 @@ In addition, this will include such values such as the number of atomic orbitals
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
