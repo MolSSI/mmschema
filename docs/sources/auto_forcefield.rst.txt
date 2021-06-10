@@ -1,5 +1,9 @@
-ForceField Schema
+ForceField schema
 =================
+
+ForceField
+----------
+
 A full description of the overall ForceField model.
 
 Required Keys
