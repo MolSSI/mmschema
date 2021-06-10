@@ -1,5 +1,9 @@
-Molecule Schema
+Molecule schema
 ===============
+
+Molecule
+--------
+
 A full description of the overall Molecule model.
 
 Required Keys

@@ -4,8 +4,8 @@ The json-schema for the NonBonded model definition
 import mmelemental
 import sys
 
-current_module = sys.modules[__name__]
 __all__ = ["NonBonded"]
+current_module = sys.modules[__name__]
 
 
 NonBonded = {
