@@ -57,8 +57,8 @@
     <script src="static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Technical Discussion" href="tech_discussion.html" />
-    <link rel="prev" title="Specification Components" href="spec_components.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="What is MMSchema?" href="index.html" />
   
    
 
@@ -215,13 +215,6 @@
     <li class="md-nav__item">
     
     
-      <a href="spec_components.html" class="md-nav__link">Specification Components</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     <label class="md-nav__link md-nav__link--active" for="__toc"> Frequently Asked Questions </label>
     
@@ -229,36 +222,12 @@
       
         
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#faq--page-root" class="md-nav__link">Frequently Asked Questions</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#will-the-json-be-validated-before-it-reaches-my-software" class="md-nav__link">Will the json be validated before it reaches my software?</a>
-        </li>
-        <li class="md-nav__item"><a href="#does-the-schema-accept-arbitrary-extra-fields-if-my-software-piece-needs-internal-extensions" class="md-nav__link">Does the schema accept arbitrary extra fields if my software piece needs internal extensions?</a>
-        </li>
-        <li class="md-nav__item"><a href="#are-there-libraries-for-writing-the-schema-in-programming-language" class="md-nav__link">Are there libraries for writing the schema in [programming-language]?</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-not-use-xml" class="md-nav__link">Why not use XML?</a>
-        </li>
-        <li class="md-nav__item"><a href="#what-style-will-be-used-for-indexing-and-case" class="md-nav__link">What style will be used for indexing and case?</a>
-        </li>
-        <li class="md-nav__item"><a href="#will-the-schema-be-versioned" class="md-nav__link">Will the schema be versioned?</a>
-        </li></ul>
-            </nav>
-        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="sources/faq.rst.txt">Show Source</a> </li>
 
   </ul>
 </nav>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="tech_discussion.html" class="md-nav__link">Technical Discussion</a>
       
     
     </li>
@@ -319,24 +288,7 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#faq--page-root" class="md-nav__link">Frequently Asked Questions</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#will-the-json-be-validated-before-it-reaches-my-software" class="md-nav__link">Will the json be validated before it reaches my software?</a>
-        </li>
-        <li class="md-nav__item"><a href="#does-the-schema-accept-arbitrary-extra-fields-if-my-software-piece-needs-internal-extensions" class="md-nav__link">Does the schema accept arbitrary extra fields if my software piece needs internal extensions?</a>
-        </li>
-        <li class="md-nav__item"><a href="#are-there-libraries-for-writing-the-schema-in-programming-language" class="md-nav__link">Are there libraries for writing the schema in [programming-language]?</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-not-use-xml" class="md-nav__link">Why not use XML?</a>
-        </li>
-        <li class="md-nav__item"><a href="#what-style-will-be-used-for-indexing-and-case" class="md-nav__link">What style will be used for indexing and case?</a>
-        </li>
-        <li class="md-nav__item"><a href="#will-the-schema-be-versioned" class="md-nav__link">Will the schema be versioned?</a>
-        </li></ul>
-            </nav>
-        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="sources/faq.rst.txt">Show Source</a> </li>
 
@@ -353,40 +305,6 @@
             
   <section id="frequently-asked-questions">
 <h1 id="faq--page-root">Frequently Asked Questions<a class="headerlink" href="#faq--page-root" title="Permalink to this headline">¶</a></h1>
-<section id="will-the-json-be-validated-before-it-reaches-my-software">
-<h2 id="will-the-json-be-validated-before-it-reaches-my-software">Will the json be validated before it reaches my software?<a class="headerlink" href="#will-the-json-be-validated-before-it-reaches-my-software" title="Permalink to this headline">¶</a></h2>
-<p>This is a question for the producer and consumers of the QC Schema. It is certainly recommended
-to validate the schema and validation can be accomplished in a variety of languages
-found at the <a class="reference external" href="http://json-schema.org/implementations.html">JSON-Schema website</a>.</p>
-</section>
-<section id="does-the-schema-accept-arbitrary-extra-fields-if-my-software-piece-needs-internal-extensions">
-<h2 id="does-the-schema-accept-arbitrary-extra-fields-if-my-software-piece-needs-internal-extensions">Does the schema accept arbitrary extra fields if my software piece needs internal extensions?<a class="headerlink" href="#does-the-schema-accept-arbitrary-extra-fields-if-my-software-piece-needs-internal-extensions" title="Permalink to this headline">¶</a></h2>
-<p>Yes, we are currently discussing which fields are reserved and where the best
-place for arbitrary fields would be.</p>
-</section>
-<section id="are-there-libraries-for-writing-the-schema-in-programming-language">
-<h2 id="are-there-libraries-for-writing-the-schema-in-programming-language">Are there libraries for writing the schema in [programming-language]?<a class="headerlink" href="#are-there-libraries-for-writing-the-schema-in-programming-language" title="Permalink to this headline">¶</a></h2>
-<p>JSON is agnostic to the underlying programming language and is well supported
-in a variety of languages (C++/Python/JS/etc). We will provide examples on how
-to write JSON in other languages where JSON is not as well supported (Fortran).</p>
-</section>
-<section id="why-not-use-xml">
-<h2 id="why-not-use-xml">Why not use XML?<a class="headerlink" href="#why-not-use-xml" title="Permalink to this headline">¶</a></h2>
-<p>The ability to hand write and tweak a given input has been a sought after
-property. In addition, the overall structure of JSON is viewed as simpler and
-more intuitive than XML. As the schema is fully specified it should be possible
-for the validator to take in a JSON input and return an XML output.</p>
-</section>
-<section id="what-style-will-be-used-for-indexing-and-case">
-<h2 id="what-style-will-be-used-for-indexing-and-case">What style will be used for indexing and case?<a class="headerlink" href="#what-style-will-be-used-for-indexing-and-case" title="Permalink to this headline">¶</a></h2>
-<p>We will support zero-indexing for arrays and snake_case for keys.
-Discussion is underway if we will follow the <a class="reference external" href="https://google.github.io/styleguide/jsoncstyleguide.xml">Google JSON Style
-Guide</a>.</p>
-</section>
-<section id="will-the-schema-be-versioned">
-<h2 id="will-the-schema-be-versioned">Will the schema be versioned?<a class="headerlink" href="#will-the-schema-be-versioned" title="Permalink to this headline">¶</a></h2>
-<p>Yes, the schema will have version flags so that the Schema can evolve over time.</p>
-</section>
 </section>
 
 
@@ -399,7 +317,7 @@ Guide</a>.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="spec_components.html" title="Specification Components"
+            <a href="index.html" title="What is MMSchema?"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -408,17 +326,17 @@ Guide</a>.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Specification Components </span>
+                      class="md-footer-nav__direction"> Previous </span> What is MMSchema? </span>
               </div>
             </a>
           
           
-            <a href="tech_discussion.html" title="Technical Discussion"
+            <a href="examples.html" title="Examples"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Technical Discussion </span>
+                class="md-footer-nav__direction"> Next </span> Examples </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -436,7 +354,7 @@ Guide</a>.</p>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

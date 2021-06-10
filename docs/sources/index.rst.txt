@@ -50,8 +50,6 @@ Core Models
    In fact, *any particle-based Newtonian method can use MMSchema and further customize/extend it*.
 
 
->>> print("This is a doctest block.")
-
 Contents
 --------
 
@@ -59,9 +57,7 @@ Contents
    :caption: Contents
    :maxdepth: 1
    
-   spec_components
    faq
-   tech_discussion
    examples
 
 .. toctree::

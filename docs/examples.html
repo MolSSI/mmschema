@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Molecule schema" href="auto_molecule.html" />
-    <link rel="prev" title="Technical Discussion" href="tech_discussion.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" />
   
    
 
@@ -215,21 +215,7 @@
     <li class="md-nav__item">
     
     
-      <a href="spec_components.html" class="md-nav__link">Specification Components</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
       <a href="faq.html" class="md-nav__link">Frequently Asked Questions</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="tech_discussion.html" class="md-nav__link">Technical Discussion</a>
       
     
     </li>
@@ -247,9 +233,7 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#examples--page-root" class="md-nav__link">Examples</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#water-mp2-energy" class="md-nav__link">Water MP2 Energy</a>
-        </li>
-        <li class="md-nav__item"><a href="#water-hf-gradient" class="md-nav__link">Water HF Gradient</a>
+        <li class="md-nav__item"><a href="#water-spc-model" class="md-nav__link">Water SPC Model</a>
         </li></ul>
             </nav>
         </li>
@@ -315,9 +299,7 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#examples--page-root" class="md-nav__link">Examples</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#water-mp2-energy" class="md-nav__link">Water MP2 Energy</a>
-        </li>
-        <li class="md-nav__item"><a href="#water-hf-gradient" class="md-nav__link">Water HF Gradient</a>
+        <li class="md-nav__item"><a href="#water-spc-model" class="md-nav__link">Water SPC Model</a>
         </li></ul>
             </nav>
         </li>
@@ -341,100 +323,79 @@
 the corresponding input of these schema are the input fields alone.
 Effectively, this is all keys above the “provenance” field. For clarify all
 array-based values have been truncated to four decimal places.</p>
-<section id="water-mp2-energy">
-<h2 id="water-mp2-energy">Water MP2 Energy<a class="headerlink" href="#water-mp2-energy" title="Permalink to this headline">¶</a></h2>
+<section id="water-spc-model">
+<h2 id="water-spc-model">Water SPC Model<a class="headerlink" href="#water-spc-model" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">"schema_name"</span><span class="p">:</span> <span class="s2">"qc_schema_output"</span><span class="p">,</span>
-  <span class="s2">"schema_version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">"molecule"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"geometry"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>    <span class="o">-</span><span class="mf">0.1294</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span>
+    <span class="s2">"schema_name"</span><span class="p">:</span> <span class="s2">"mmschema_molecule"</span><span class="p">,</span>
+    <span class="s2">"schema_version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"symbols"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"O"</span><span class="p">,</span>
+        <span class="s2">"H"</span><span class="p">,</span>
+        <span class="s2">"H"</span>
     <span class="p">],</span>
-    <span class="s2">"symbols"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"O"</span><span class="p">,</span> <span class="s2">"H"</span><span class="p">,</span> <span class="s2">"H"</span><span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">"driver"</span><span class="p">:</span> <span class="s2">"energy"</span><span class="p">,</span>
-  <span class="s2">"model"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"MP2"</span><span class="p">,</span>
-    <span class="s2">"basis"</span><span class="p">:</span> <span class="s2">"cc-pVDZ"</span>
-  <span class="p">},</span>
-  <span class="s2">"keywords"</span><span class="p">:</span> <span class="p">{},</span>
-  <span class="s2">"provenance"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"creator"</span><span class="p">:</span> <span class="s2">"QM Program"</span><span class="p">,</span>
-    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.1"</span><span class="p">,</span>
-    <span class="s2">"routine"</span><span class="p">:</span> <span class="s2">"module.json.run_json"</span>
-  <span class="p">},</span>
-  <span class="s2">"return_result"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span><span class="p">,</span>
-  <span class="s2">"success"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"calcinfo_nbasis"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nmo"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nalpha"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nbeta"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"calcinfo_natom"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="s2">"return_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span><span class="p">,</span>
-    <span class="s2">"scf_one_electron_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.44534536383037</span><span class="p">,</span>
-    <span class="s2">"scf_two_electron_energy"</span><span class="p">:</span> <span class="mf">37.62246494040059</span><span class="p">,</span>
-    <span class="s2">"nuclear_repulsion_energy"</span><span class="p">:</span> <span class="mf">8.80146205625184</span><span class="p">,</span>
-    <span class="s2">"scf_dipole_moment"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0954</span><span class="p">],</span>
-    <span class="s2">"scf_iterations"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s2">"scf_total_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.02141836717794</span><span class="p">,</span>
-    <span class="s2">"mp2_same_spin_correlation_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.051980792916251864</span><span class="p">,</span>
-    <span class="s2">"mp2_opposite_spin_correlation_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.15496826800602342</span><span class="p">,</span>
-    <span class="s2">"mp2_singles_energy"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-    <span class="s2">"mp2_doubles_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.20694906092226972</span><span class="p">,</span>
-    <span class="s2">"mp2_total_correlation_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.20694906092226972</span><span class="p">,</span>
-    <span class="s2">"mp2_total_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.22836742810021</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="water-hf-gradient">
-<h2 id="water-hf-gradient">Water HF Gradient<a class="headerlink" href="#water-hf-gradient" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">"schema_name"</span><span class="p">:</span> <span class="s2">"qc_schema_output"</span><span class="p">,</span>
-  <span class="s2">"schema_version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">"molecule"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"geometry"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>    <span class="o">-</span><span class="mf">0.1294</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">1.4941</span><span class="p">,</span>  <span class="mf">1.0274</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"H2O"</span><span class="p">,</span>
+    <span class="s2">"ndim"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"atom_labels"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"OW"</span><span class="p">,</span>
+        <span class="s2">"HW1"</span><span class="p">,</span>
+        <span class="s2">"HW2"</span>
     <span class="p">],</span>
-    <span class="s2">"symbols"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"O"</span><span class="p">,</span> <span class="s2">"H"</span><span class="p">,</span> <span class="s2">"H"</span><span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">"driver"</span><span class="p">:</span> <span class="s2">"gradient"</span><span class="p">,</span>
-  <span class="s2">"model"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"HF"</span><span class="p">,</span>
-    <span class="s2">"basis"</span><span class="p">:</span> <span class="s2">"cc-pVDZ"</span>
-  <span class="p">},</span>
-  <span class="s2">"keywords"</span><span class="p">:</span> <span class="p">{},</span>
-  <span class="s2">"provenance"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"creator"</span><span class="p">:</span> <span class="s2">"QM Program"</span><span class="p">,</span>
-    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.1"</span><span class="p">,</span>
-    <span class="s2">"routine"</span><span class="p">:</span> <span class="s2">"module.json.run_json"</span>
-  <span class="p">},</span>
-  <span class="s2">"return_result"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span>    <span class="o">-</span><span class="mf">0.0595</span><span class="p">,</span>
-    <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0430</span><span class="p">,</span>  <span class="mf">0.0297</span><span class="p">,</span>
-    <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0430</span><span class="p">,</span>  <span class="mf">0.0297</span>
-  <span class="p">],</span>
-  <span class="s2">"success"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"calcinfo_nbasis"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nmo"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nalpha"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"calcinfo_nbeta"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"calcinfo_natom"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="s2">"return_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.02141836717794</span><span class="p">,</span>
-    <span class="s2">"scf_one_electron_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.44534536383044</span><span class="p">,</span>
-    <span class="s2">"scf_two_electron_energy"</span><span class="p">:</span> <span class="mf">37.622464940400654</span><span class="p">,</span>
-    <span class="s2">"nuclear_repulsion_energy"</span><span class="p">:</span> <span class="mf">8.80146205625184</span><span class="p">,</span>
-    <span class="s2">"scf_dipole_moment"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0954</span><span class="p">],</span>
-    <span class="s2">"scf_iterations"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s2">"scf_total_energy"</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.02141836717794</span>
-  <span class="p">}</span>
+    <span class="s2">"atomic_numbers"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">8</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">1</span>
+    <span class="p">],</span>
+    <span class="s2">"masses"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">15.9994</span><span class="p">,</span>
+        <span class="mf">1.0079</span><span class="p">,</span>
+        <span class="mf">1.0079</span>
+    <span class="p">],</span>
+    <span class="s2">"masses_units"</span><span class="p">:</span> <span class="s2">"dalton"</span><span class="p">,</span>
+    <span class="s2">"molecular_charge"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">"molecular_charge_units"</span><span class="p">:</span> <span class="s2">"e"</span><span class="p">,</span>
+    <span class="s2">"geometry"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">2.0</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.0</span><span class="p">,</span>
+        <span class="mf">2.82</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.5800000000000001</span><span class="p">,</span>
+        <span class="mf">1.18</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.5800000000000001</span>
+    <span class="p">],</span>
+    <span class="s2">"geometry_units"</span><span class="p">:</span> <span class="s2">"angstrom"</span><span class="p">,</span>
+    <span class="s2">"connectivity"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">,</span>
+            <span class="mf">1.0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span>
+            <span class="mf">1.0</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">"substructs"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">"HOH"</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">"HOH"</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">"HOH"</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">"provenance"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"creator"</span><span class="p">:</span> <span class="s2">"MMElemental"</span><span class="p">,</span>
+        <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0+untagged.586.g645c496.dirty"</span><span class="p">,</span>
+        <span class="s2">"routine"</span><span class="p">:</span> <span class="s2">"mmelemental.models.molecule.mm_mol"</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -451,7 +412,7 @@ array-based values have been truncated to four decimal places.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="tech_discussion.html" title="Technical Discussion"
+            <a href="faq.html" title="Frequently Asked Questions"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -460,7 +421,7 @@ array-based values have been truncated to four decimal places.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Technical Discussion </span>
+                      class="md-footer-nav__direction"> Previous </span> Frequently Asked Questions </span>
               </div>
             </a>
           
@@ -488,7 +449,7 @@ array-based values have been truncated to four decimal places.</p>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
