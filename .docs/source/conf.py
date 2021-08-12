@@ -30,19 +30,41 @@ import mmschema
 
 
 # Mol
-gen_schema_docs.gen_rst("Molecule")
+gen_schema_docs.gen_rst("molecule")
 
-# FF
-gen_schema_docs.gen_rst("ForceField")
-gen_schema_docs.gen_rst("NonBonded")
-for name in mmschema.dev.forcefield.nonbonded.__all__:
-    if name != "NonBonded":
-        gen_schema_docs.gen_rst(name, mode="a", filename="auto_nonbonded.rst")
+# Trajectory
+gen_schema_docs.gen_rst("trajectory")
 
-gen_schema_docs.gen_rst("Bonds")
-for name in mmschema.dev.forcefield.bonds.__all__:
-    if name != "Bonds":
-        gen_schema_docs.gen_rst(name, mode="a", filename="auto_bonds.rst")
+# ForceField
+gen_schema_docs.gen_rst("forcefield")
+
+## NonBonded FF
+gen_schema_docs.gen_rst(
+    "nonbonded_lj",
+    # mode="a",
+    # filename="auto_nonbonded.rst",
+    alias="NonBonded LennardJones",
+)
+gen_schema_docs.gen_rst(
+    "nonbonded_eam",
+    # mode="a",
+    # filename="auto_nonbonded.rst",
+    alias="NonBonded EAM",
+)
+gen_schema_docs.gen_rst(
+    "nonbonded",
+    hyperlinks={"Lennard Jones": "auto_nonbonded_lj", "Embedded Atom Model": "auto_nonbonded_eam"},
+)
+
+
+## Bonded FF
+gen_schema_docs.gen_rst("bonds")
+# for name in mmschema.dev.forcefield.bonds.__all__:
+#    if name != "Bonds":
+#        gen_schema_docs.gen_rst(name, mode="a", filename="auto_bonds.rst")
+
+gen_schema_docs.gen_rst("angles")
+gen_schema_docs.gen_rst("dihedrals")
 
 project = "MMSchema"
 copyright = (
