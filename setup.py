@@ -4,10 +4,11 @@ if __name__ == "__main__":
     setuptools.setup(
         name="mmschema",
         version="1",
-        description="A schema for classical & molecular mechanics",
+        description="A schema for particle & molecular mechanics",
         author="",
         url="https://github.com/MolSSI/mmschema",
         license="",
+        include_package_data=True,
         packages=setuptools.find_packages(),
         install_requires=[
             "jsonschema",
@@ -21,6 +22,10 @@ if __name__ == "__main__":
             ],
             "tests": [
                 "pytest",
+            ],
+            "hdf5": [
+                "h5py",
+                "h5json",
             ],
         },
         tests_require=[
