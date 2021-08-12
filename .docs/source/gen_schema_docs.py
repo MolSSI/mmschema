@@ -6,45 +6,65 @@ import os
 
 sys.path.insert(1, os.path.dirname(__file__))
 import schema_doc_helpers as sh
-import mmschema.dev
+import mmschema
 
 
-def gen_rst(model_name, mode="w", filename=None):
+def gen_rst(model_name, mode="w", filename=None, version=1, alias=None, hyperlinks={}):
 
-    model = getattr(mmschema.dev, model_name)
+    model = mmschema.get_schema(model_name, version)
+    alias = alias or model_name.title()
 
-    if mode == "w":
-        mfile = [f"{model_name} schema"]
-        mfile.append("=" * len(mfile[-1]))
+    mfile = [f"{alias} schema"]
+    mfile.append("=" * len(mfile[-1]))
+
+    mfile.extend(f"""A full description of the overall {alias} model.""".splitlines())
+
+    props = model.get("properties")
+    req = model.get("required")
+
+    sh.write_subsection(mfile, "Required Keys")
+
+    if req is not None:
+        mfile.extend(
+            f"""The following properties are required for the {alias} specification.""".splitlines()
+        )
+        sh.write_key_table(mfile, props, req)
     else:
-        mfile = []
-
-    sh.write_subsection(mfile, model_name)
-    mfile.extend(
-        f"""A full description of the overall {model_name} model.""".splitlines()
-    )
-
-    props = model["properties"]
-    req = model["required"]
-
-    sh.write_subsubsection(mfile, "Required Keys")
-
-    mfile.extend(
-        f"""The following properties are required for the {model_name} specification.""".splitlines()
-    )
-
-    sh.write_key_table(mfile, props, req)
+        mfile.extend(
+            f"""There are no required fields for the {alias} specification.""".splitlines()
+        )
 
     ### Optional properties
-    sh.write_subsubsection(mfile, "Optional Keys")
+    sh.write_subsection(mfile, "Optional Keys")
 
-    mfile.extend(
-        f"""The following keys are optional for the {model_name} specification.""".splitlines()
-    )
+    if req is not None:
+        opt = set(props.keys()) - set(req)
+    else:
+        opt = set(props.keys())
 
-    sh.write_key_table(mfile, props, set(props.keys()) - set(req))
+    if len(opt):
+        mfile.extend(
+            f"""The following keys are optional for the {alias} specification.""".splitlines()
+        )
+        sh.write_key_table(mfile, props, opt)
+    else:
+        mfile.extend(
+            f"""There are no optional fields for the {alias} specification.""".splitlines()
+        )
 
     mfile.extend("\n\n")
+
+    if hyperlinks:
+        sh.write_subsection(mfile, "Potential Schemas")
+
+    for key, link in hyperlinks.items():
+        #mfile.extend(f"- :doc:`{key} <{link}>` \n".splitlines())
+        mfile.extend([".. toctree::", f"   :caption: {key}", "   :maxdepth: 1\n", f"   {link}\n"])
+
+    mfile.extend("\n")
+
+    #for link in hyperlinks.values():
+
 
     # Write out the file
     filename = filename or f"auto_{model_name.lower()}.rst"
