@@ -8,19 +8,17 @@ _supported_versions = [
 ]
 
 _aliases = {
-    "molecule": "Molecule",
-    "trajectory": "Trajectory",
-    "forcefield": "ForceField",
-    "ensemble": "Ensemble",
-    "provenance": "Provenance",
-}
-
-_versions_list = {
-    "molecule": _supported_versions,
-    "trajectory": _supported_versions,
-    "forcefield": _supported_versions,
-    "ensemble": _supported_versions,
-    "provenance": _supported_versions,
+    "molecule": "molecule.schema",
+    "trajectory": "trajectory.schema",
+    "forcefield": "forcefield.schema",
+    "nonbonded": "nonbonded.schema",
+    "nonbonded_eam": Path("nonbonded_types") / "eam.schema",
+    "nonbonded_lj": Path("nonbonded_types") / "lj.schema",
+    "bonds": "bonds.schema",
+    "angles": "angles.schema",
+    "dihedrals": "dihedrals.schema",
+    "ensemble": "ensemble.schema",
+    "provenance": "provenance.schema",
 }
 
 
@@ -38,7 +36,7 @@ def get_schema(schema_type, version="dev"):
     # temporary
     if version not in _supported_versions:
         raise ValueError(
-            f"Unsupported version ({version}). Supported versions are : {_versions_list}."
+            f"Unsupported version ({version}). Supported versions are : {_supported_versions}."
         )
     if schema_type not in _aliases.keys():
         raise KeyError(
@@ -47,7 +45,7 @@ def get_schema(schema_type, version="dev"):
             )
         )
 
-    fpath = _data_path / ("v" + str(version)) / (schema_type + ".schema")
+    fpath = _data_path / ("v" + str(version)) / _aliases[schema_type]
     ret = json.loads(fpath.read_text())
 
     return ret
