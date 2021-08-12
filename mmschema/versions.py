@@ -3,6 +3,9 @@ from pathlib import Path
 
 
 _data_path = Path(__file__).parent.resolve() / "data"
+_supported_versions = [
+    1,
+]
 
 _aliases = {
     "molecule": "Molecule",
@@ -13,11 +16,11 @@ _aliases = {
 }
 
 _versions_list = {
-    "molecule": [1, "dev"],
-    "trajectory": [1, "dev"],
-    "forcefield": [1, "dev"],
-    "ensemble": [1, "dev"],
-    "provenance": [1, "dev"],
+    "molecule": _supported_versions,
+    "trajectory": _supported_versions,
+    "forcefield": _supported_versions,
+    "ensemble": _supported_versions,
+    "provenance": _supported_versions,
 }
 
 
@@ -33,16 +36,18 @@ def get_schema(schema_type, version="dev"):
     Returns the requested schema (input or output) for a given version number.
     """
     # temporary
-    if version == "dev":
-        version = 2
-    else:
+    if version not in _supported_versions:
+        raise ValueError(
+            f"Unsupported version ({version}). Supported versions are : {_versions_list}."
+        )
+    if schema_type not in _aliases.keys():
         raise KeyError(
             "Schema type should be among {} (+aliases), not '{}'.".format(
                 list(_aliases.keys()), schema_type
             )
         )
 
-    fpath = _data_path / ("v" + str(version)) / (fname + ".schema")
+    fpath = _data_path / ("v" + str(version)) / (schema_type + ".schema")
     ret = json.loads(fpath.read_text())
 
     return ret
