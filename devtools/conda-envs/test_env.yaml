@@ -13,10 +13,13 @@ dependencies:
     # Pip-only installs
   - pip:
     - jsonschema
+    - h5py
+    - h5json
     - codecov
     - pydantic
-    - qcelemental
-    - git+https://github.com/MolSSI/cmselemental.git@dev
+    - git+https://github.com/MolSSI/cmselemental.git
     - git+https://github.com/MolSSI/mmelemental.git
+    - git+https://github.com/MolSSI/mm_data.git
+    - qcelemental
     - sphinx
     - sphinx-material
