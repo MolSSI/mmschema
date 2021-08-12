@@ -1,0 +1,368 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "name": "mmschema_molecule", 
+    "version": 1,
+    "title": "Molecule",
+    "description": "A representation of a molecule in particle (coarse-grained) and molecular mechanics.",
+    "type": "object",
+    "properties": {
+        "schema_name": {
+            "title": "Schema Name",
+            "description": "The MMSchema specification to which this model conforms. Explicitly fixed as mmschema_molecule.",
+            "default": "mmschema_molecule",
+            "pattern": "mmschema_molecule",
+            "type": "string"
+        },
+        "schema_version": {
+            "title": "Schema Version",
+            "description": "The version number of ``schema_name`` to which this model conforms.",
+            "default": 1,
+            "type": "integer"
+        },
+        "symbols": {
+            "title": "Symbols",
+            "description": "An ordered (natom,) array-like object of particle symbols. The index of this attribute sets the order for all other per-particle setting like ``geometry`` and the first dimension of ``geometry``.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "name": {
+            "title": "Name",
+            "description": "Common or human-readable name to assign to this molecule. This field can be arbitrary; see ``identifiers`` for well-defined labels.",
+            "type": "string"
+        },
+        "identifiers": {
+            "title": "Identifiers",
+            "description": "An optional dictionary of additional identifiers by which this molecule can be referenced, such as INCHI, canonical SMILES, etc. See the :class:``Identifiers`` model for more details.",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Identifiers"
+                }
+            ]
+        },
+        "comment": {
+            "title": "Comment",
+            "description": "Additional comments for this molecule. Intended for pure human/user consumption and clarity.",
+            "type": "string"
+        },
+        "ndim": {
+            "title": "Ndim",
+            "description": "Number of spatial dimensions.",
+            "default": 3,
+            "type": "integer"
+        },
+        "atom_labels": {
+            "title": "Atom Labels",
+            "description": "Additional per-atom labels as an array of strings. Typical use is in model conversions, such as Elemental <-> Molpro and not typically something which should be user assigned. See the ``comments`` field for general human-consumable text to affix to the molecule.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "atomic_numbers": {
+            "title": "Atomic Numbers",
+            "description": "An optional ordered 1-D array-like object of atomic numbers of shape (nat,). Index matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Values are inferred from the ``symbols`` list if not explicitly set. Ghostedness should be indicated through ``real`` field, not zeros here.",
+            "type": "array",
+            "items": {
+                "type": "number",
+                "multipleOf": 1.0
+            }
+        },
+        "mass_numbers": {
+            "title": "Mass Numbers",
+            "description": "An optional ordered 1-D array-like object of atomic *mass* numbers of shape (nat). Index matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Values are inferred from the most common isotopes of the ``symbols`` list if not explicitly set. If single isotope not (yet) known for an atom, -1 is placeholder.",
+            "type": "array",
+            "items": {
+                "type": "number",
+                "multipleOf": 1.0
+            }
+        },
+        "masses": {
+            "title": "Masses",
+            "description": "The ordered array of particle masses. Index order matches the 0-indexed indices of all other per-atom fields like ``symbols`` and ``real``. If this is not provided, the mass of each atom is inferred from its most common isotope. If this is provided, it must be the same length as ``symbols`` but can accept ``None`` entries for standard masses to infer from the same index in the ``symbols`` field.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "masses_units": {
+            "title": "Masses Units",
+            "description": "Units for atomic masses. Defaults to unified atomic mass unit.",
+            "default": "amu",
+            "type": "string"
+        },
+        "molecular_charge": {
+            "title": "Molecular Charge",
+            "description": "The net electrostatic charge of the molecule. Default unit is elementary charge.",
+            "default": 0.0,
+            "type": "number"
+        },
+        "molecular_charge_units": {
+            "title": "Molecular Charge Units",
+            "description": "Units for molecular charge. Defaults to elementary charge.",
+            "default": "e",
+            "type": "string"
+        },
+        "geometry": {
+            "title": "Geometry",
+            "description": "An ordered (natom*ndim,) array for XYZ atomic coordinates. Default unit is Angstrom.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "geometry_units": {
+            "title": "Geometry Units",
+            "description": "Units for atomic geometry. Defaults to Angstroms.",
+            "default": "angstrom",
+            "type": "string"
+        },
+        "velocities": {
+            "title": "Velocities",
+            "description": "An ordered (natoms*ndim,) array for XYZ atomic velocities. Default unit is Angstroms/femtoseconds.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "velocities_units": {
+            "title": "Velocities Units",
+            "description": "Units for atomic velocities. Defaults to Angstroms/femtoseconds.",
+            "default": "angstrom/fs",
+            "type": "string"
+        },
+        "connectivity": {
+            "title": "Connectivity",
+            "description": "A list of bonds within the molecule. Each entry is a tuple of ``(atom_index_A, atom_index_B, bond_order)`` where the ``atom_index`` matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Bonds may be freely reordered and inverted.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "type": "integer"
+                    },
+                    {
+                        "type": "integer"
+                    },
+                    {
+                        "type": "number"
+                    }
+                ]
+            }
+        },
+        "substructs": {
+            "title": "Substructs",
+            "description": "A list of (name, num) of connected atoms constituting the building block (e.g. monomer) of the structure (e.g. a polymer). Order follows atomic indices from 0 till Natoms-1. E.g. [('ALA', 4), ...] means atom1 belongs to aminoacid alanine with residue number 4.",
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
+            }
+        },
+        "provenance": {
+            "title": "Provenance",
+            "description": "The provenance information about how this object (and its attributes) were generated, provided, and manipulated.",
+            "default": {
+                "creator": "MMElemental",
+                "version": "0+untagged.709.g7c6bace",
+                "routine": "mmelemental.models.molecule.mm_mol"
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Provenance"
+                }
+            ]
+        },
+        "extras": {
+            "title": "Extras",
+            "description": "Additional information to bundle with the molecule. Use for schema development and scratch space.",
+            "default": {},
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ChemCode": {
+            "title": "ChemCode",
+            "description": "Parameters\n----------\ncode : str\n    A chemical code that describes a molecule or molecular pattern e.g. smiles, smarts, etc. See the :class:``Identifiers`` class for supported codes.\ndtype : str, Optional\n    Data type e.g. smiles, smarts, etc. ",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "title": "Code",
+                    "description": "A chemical code that describes a molecule or molecular pattern e.g. smiles, smarts, etc. See the :class:``Identifiers`` class for supported codes.",
+                    "type": "string"
+                },
+                "dtype": {
+                    "title": "Dtype",
+                    "description": "Data type e.g. smiles, smarts, etc. ",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code"
+            ],
+            "additionalProperties": false
+        },
+        "Identifiers": {
+            "title": "Identifiers",
+            "description": "An extension of the qcelemental.models.molecule.Identifiers for RDKit constructors.\nSee `link <https://rdkit.org/docs/source/rdkit.Chem.rdmolfiles.html>`_ for more info.\n\n\nParameters\n----------\nmolecule_hash : str, Optional\nmolecular_formula : str, Optional\nsmiles : Union[:class:`ChemCode`, str], Optional\n    A simplified molecular-input line-entry system code.\ninchi : Union[:class:`ChemCode`, str], Optional\n    An international chemical identifier code.\ninchikey : str, Optional\ncanonical_explicit_hydrogen_smiles : str, Optional\ncanonical_isomeric_explicit_hydrogen_mapped_smiles : str, Optional\ncanonical_isomeric_explicit_hydrogen_smiles : str, Optional\ncanonical_isomeric_smiles : str, Optional\ncanonical_smiles : str, Optional\npubchem_cid : str, Optional\n    PubChem Compound ID\npubchem_sid : str, Optional\n    PubChem Substance ID\npubchem_conformerid : str, Optional\n    PubChem Conformer ID\nsmarts : Union[:class:`ChemCode`, str], Optional\n    A SMILES arbitrary target specification code for defining substructures.\nsequence : Union[:class:`ChemCode`, str], Optional\n    A sequence code from RDKit (currently only supports peptides).\nfasta : Union[:class:`ChemCode`, str], Optional\n    A FASTA code (currently only supports peptides).\nhelm : Union[:class:`ChemCode`, str], Optional\n    A HELM code (currently only supports peptides).",
+            "type": "object",
+            "properties": {
+                "molecule_hash": {
+                    "title": "Molecule Hash",
+                    "type": "string"
+                },
+                "molecular_formula": {
+                    "title": "Molecular Formula",
+                    "type": "string"
+                },
+                "smiles": {
+                    "title": "Smiles",
+                    "description": "A simplified molecular-input line-entry system code.",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "inchi": {
+                    "title": "Inchi",
+                    "description": "An international chemical identifier code.",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "inchikey": {
+                    "title": "Inchikey",
+                    "type": "string"
+                },
+                "canonical_explicit_hydrogen_smiles": {
+                    "title": "Canonical Explicit Hydrogen Smiles",
+                    "type": "string"
+                },
+                "canonical_isomeric_explicit_hydrogen_mapped_smiles": {
+                    "title": "Canonical Isomeric Explicit Hydrogen Mapped Smiles",
+                    "type": "string"
+                },
+                "canonical_isomeric_explicit_hydrogen_smiles": {
+                    "title": "Canonical Isomeric Explicit Hydrogen Smiles",
+                    "type": "string"
+                },
+                "canonical_isomeric_smiles": {
+                    "title": "Canonical Isomeric Smiles",
+                    "type": "string"
+                },
+                "canonical_smiles": {
+                    "title": "Canonical Smiles",
+                    "type": "string"
+                },
+                "pubchem_cid": {
+                    "title": "Pubchem Cid",
+                    "description": "PubChem Compound ID",
+                    "type": "string"
+                },
+                "pubchem_sid": {
+                    "title": "Pubchem Sid",
+                    "description": "PubChem Substance ID",
+                    "type": "string"
+                },
+                "pubchem_conformerid": {
+                    "title": "Pubchem Conformerid",
+                    "description": "PubChem Conformer ID",
+                    "type": "string"
+                },
+                "smarts": {
+                    "title": "Smarts",
+                    "description": "A SMILES arbitrary target specification code for defining substructures.",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "sequence": {
+                    "title": "Sequence",
+                    "description": "A sequence code from RDKit (currently only supports peptides).",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "fasta": {
+                    "title": "Fasta",
+                    "description": "A FASTA code (currently only supports peptides).",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "helm": {
+                    "title": "Helm",
+                    "description": "A HELM code (currently only supports peptides).",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChemCode"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "Provenance": {
+            "title": "Provenance",
+            "description": "Provenance information.\n\n\nParameters\n----------\ncreator : str\n    The creator of the object.\nversion : str, Optional\n    The version of the creator.\nroutine : str, Optional\n    The routine of the creator.",
+            "type": "object",
+            "properties": {
+                "creator": {
+                    "title": "Creator",
+                    "description": "The creator of the object.",
+                    "type": "string"
+                },
+                "version": {
+                    "title": "Version",
+                    "description": "The version of the creator.",
+                    "type": "string"
+                },
+                "routine": {
+                    "title": "Routine",
+                    "description": "The routine of the creator.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "creator"
+            ]
+        }
+    }
+}
