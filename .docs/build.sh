@@ -1,3 +1,5 @@
+set -e
+
 if [ -d _build ]; then rm -r _build; fi
 if [ -d build ]; then rm -r build; fi
 
