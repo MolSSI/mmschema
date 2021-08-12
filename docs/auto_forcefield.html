@@ -47,7 +47,7 @@
   
   
   
-    <title>ForceField schema &#8212; MMSchema</title>
+    <title>Forcefield schema &#8212; MMSchema</title>
     <link rel="stylesheet" type="text/css" href="static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="static/material.css" />
     <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
@@ -57,7 +57,7 @@
     <script src="static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NonBonded schema" href="auto_nonbonded.html" />
+    <link rel="next" title="Nonbonded schema" href="auto_nonbonded.html" />
     <link rel="prev" title="Molecule schema" href="auto_molecule.html" />
   
    
@@ -95,7 +95,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">A schema for Molecular Mechanics</span>
-          <span class="md-header-nav__topic"> ForceField schema </span>
+          <span class="md-header-nav__topic"> Forcefield schema </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -247,23 +247,19 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> ForceField schema </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Forcefield schema </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">ForceField schema</a>
+      <a href="#" class="md-nav__link md-nav__link--active">Forcefield schema</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#auto-forcefield--page-root" class="md-nav__link">ForceField schema</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#forcefield" class="md-nav__link">ForceField</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#auto-forcefield--page-root" class="md-nav__link">Forcefield schema</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#required-keys" class="md-nav__link">Required Keys</a>
         </li>
         <li class="md-nav__item"><a href="#optional-keys" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
         </li></ul>
             </nav>
         </li>
@@ -278,7 +274,7 @@
     <li class="md-nav__item">
     
     
-      <a href="auto_nonbonded.html" class="md-nav__link">NonBonded schema</a>
+      <a href="auto_nonbonded.html" class="md-nav__link">Nonbonded schema</a>
       
     
     </li>
@@ -286,6 +282,32 @@
     
     
       <a href="auto_bonds.html" class="md-nav__link">Bonds schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_angles.html" class="md-nav__link">Angles schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_dihedrals.html" class="md-nav__link">Dihedrals schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Collections</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_trajectory.html" class="md-nav__link">Trajectory schema</a>
       
     
     </li>
@@ -303,15 +325,11 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#auto-forcefield--page-root" class="md-nav__link">ForceField schema</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#forcefield" class="md-nav__link">ForceField</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#auto-forcefield--page-root" class="md-nav__link">Forcefield schema</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#required-keys" class="md-nav__link">Required Keys</a>
         </li>
         <li class="md-nav__item"><a href="#optional-keys" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
         </li></ul>
             </nav>
         </li>
@@ -330,14 +348,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="forcefield-schema">
-<h1 id="auto-forcefield--page-root">ForceField schema<a class="headerlink" href="#auto-forcefield--page-root" title="Permalink to this headline">¶</a></h1>
-<section id="forcefield">
-<h2 id="forcefield">ForceField<a class="headerlink" href="#forcefield" title="Permalink to this headline">¶</a></h2>
-<p>A full description of the overall ForceField model.</p>
+<h1 id="auto-forcefield--page-root">Forcefield schema<a class="headerlink" href="#auto-forcefield--page-root" title="Permalink to this headline">¶</a></h1>
+<p>A full description of the overall Forcefield model.</p>
 <section id="required-keys">
-<h3 id="required-keys">Required Keys<a class="headerlink" href="#required-keys" title="Permalink to this headline">¶</a></h3>
+<h2 id="required-keys">Required Keys<a class="headerlink" href="#required-keys" title="Permalink to this headline">¶</a></h2>
 <dl>
-<dt>The following properties are required for the ForceField specification.</dt><dd><table>
+<dt>The following properties are required for the Forcefield specification.</dt><dd><table>
 <colgroup>
 <col style="width: 32%"/>
 <col style="width: 41%"/>
@@ -351,7 +367,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>symbols</p></td>
-<td><p>An ordered (natom,) list of particle (e.g. atomic) elemental symbols.</p></td>
+<td><p>An ordered (natom,) list of particle (e.g. atomic elemental) symbols.</p></td>
 <td><p>array[string]</p></td>
 </tr>
 </tbody>
@@ -360,9 +376,9 @@
 </dl>
 </section>
 <section id="optional-keys">
-<h3 id="optional-keys">Optional Keys<a class="headerlink" href="#optional-keys" title="Permalink to this headline">¶</a></h3>
+<h2 id="optional-keys">Optional Keys<a class="headerlink" href="#optional-keys" title="Permalink to this headline">¶</a></h2>
 <dl>
-<dt>The following keys are optional for the ForceField specification.</dt><dd><table>
+<dt>The following keys are optional for the Forcefield specification.</dt><dd><table>
 <colgroup>
 <col style="width: 32%"/>
 <col style="width: 41%"/>
@@ -418,14 +434,13 @@ type names are associated with the atomic elements defined in other objects e.g.
 <td><p>array[#/definitions/Dihedrals]</p></td>
 </tr>
 <tr class="row-even"><td><p>exclusions</p></td>
-<td><p>Which pairs of bonded atoms to exclude from non-bonded calculations.            The rules to apply in choosing bonded
-exclusions are specifed in the configuration file using the exclude parameter. The        choices for exclusions are
-None, 1-2, 1-3, 1-4, etc. With None, no atom pairs are excluded. With 1-2, only atoms that are connected             via
-a linear bond are excluded. With 1-3, any pair of atoms connected via a bond or bonded to a common third atom are
-excluded.         With 1-4, any atoms that are connected by a linear bond, or a sequence of two bonds, or a sequence of
-three bonds, are excluded.        With scaled1-4, exclusions are applied in the same manner as the 1-3 setting, but
-those pairs that are connected by a sequence of       3 bonds are calculated using the modified 1-4 methods described
-rather than the standard force calculations.</p></td>
+<td><p>Which pairs of bonded atoms to exclude from non-bonded calculations. The rules to apply in choosing bonded exclusions
+are specifed in the configuration file using the exclude parameter. The choices for exclusions are None, 1-2, 1-3, 1-4,
+etc. With None, no atom pairs are excluded. With 1-2, only atoms that are connected via a linear bond are excluded. With
+1-3, any pair of atoms connected via a bond or bonded to a common third atom are excluded. With 1-4, any atoms that are
+connected by a linear bond, or a sequence of two bonds, or a sequence of three bonds, are excluded. With scaled1-4,
+exclusions are applied in the same manner as the 1-3 setting, but those pairs that are connected by a sequence of bonds
+are calculated using the modified 1-4 methods described rather than the standard force calculations.</p></td>
 <td><p>string</p></td>
 </tr>
 <tr class="row-odd"><td><p>extras</p></td>
@@ -480,7 +495,6 @@ provided, it must be the same length as <code class="docutils literal notranslat
 </dl>
 </section>
 </section>
-</section>
 
 
           </article>
@@ -506,12 +520,12 @@ provided, it must be the same length as <code class="docutils literal notranslat
             </a>
           
           
-            <a href="auto_nonbonded.html" title="NonBonded schema"
+            <a href="auto_nonbonded.html" title="Nonbonded schema"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> NonBonded schema </span>
+                class="md-footer-nav__direction"> Next </span> Nonbonded schema </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

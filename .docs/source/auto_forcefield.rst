@@ -1,25 +1,21 @@
-ForceField schema
+Forcefield schema
 =================
-
-ForceField
-----------
-
-A full description of the overall ForceField model.
+A full description of the overall Forcefield model.
 
 Required Keys
-^^^^^^^^^^^^^
+-------------
 
-The following properties are required for the ForceField specification.
+The following properties are required for the Forcefield specification.
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
    | Key Name                                                                                        | Description                                                                                                              | Field Type                                                                       |
    +=================================================================================================+==========================================================================================================================+==================================================================================+
-   | symbols                                                                                         | An ordered (natom,) list of particle (e.g. atomic) elemental symbols.                                                    | array[string]                                                                    |
+   | symbols                                                                                         | An ordered (natom,) list of particle (e.g. atomic elemental) symbols.                                                    | array[string]                                                                    |
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Optional Keys
-^^^^^^^^^^^^^
+-------------
 
-The following keys are optional for the ForceField specification.
+The following keys are optional for the Forcefield specification.
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
    | Key Name                                                                                        | Description                                                                                                              | Field Type                                                                       |
    +=================================================================================================+==========================================================================================================================+==================================================================================+
@@ -45,14 +41,13 @@ The following keys are optional for the ForceField specification.
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
    | dihedrals                                                                                       | No description provided.                                                                                                 | array[#/definitions/Dihedrals]                                                   |
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | exclusions                                                                                      | Which pairs of bonded atoms to exclude from non-bonded calculations.            The rules to apply in choosing bonded    | string                                                                           |
-   |                                                                                                 | exclusions are specifed in the configuration file using the exclude parameter. The        choices for exclusions are     |                                                                                  |
-   |                                                                                                 | None, 1-2, 1-3, 1-4, etc. With None, no atom pairs are excluded. With 1-2, only atoms that are connected             via |                                                                                  |
-   |                                                                                                 | a linear bond are excluded. With 1-3, any pair of atoms connected via a bond or bonded to a common third atom are        |                                                                                  |
-   |                                                                                                 | excluded.         With 1-4, any atoms that are connected by a linear bond, or a sequence of two bonds, or a sequence of  |                                                                                  |
-   |                                                                                                 | three bonds, are excluded.        With scaled1-4, exclusions are applied in the same manner as the 1-3 setting, but      |                                                                                  |
-   |                                                                                                 | those pairs that are connected by a sequence of       3 bonds are calculated using the modified 1-4 methods described    |                                                                                  |
-   |                                                                                                 | rather than the standard force calculations.                                                                             |                                                                                  |
+   | exclusions                                                                                      | Which pairs of bonded atoms to exclude from non-bonded calculations. The rules to apply in choosing bonded exclusions    | string                                                                           |
+   |                                                                                                 | are specifed in the configuration file using the exclude parameter. The choices for exclusions are None, 1-2, 1-3, 1-4,  |                                                                                  |
+   |                                                                                                 | etc. With None, no atom pairs are excluded. With 1-2, only atoms that are connected via a linear bond are excluded. With |                                                                                  |
+   |                                                                                                 | 1-3, any pair of atoms connected via a bond or bonded to a common third atom are excluded. With 1-4, any atoms that are  |                                                                                  |
+   |                                                                                                 | connected by a linear bond, or a sequence of two bonds, or a sequence of three bonds, are excluded. With scaled1-4,      |                                                                                  |
+   |                                                                                                 | exclusions are applied in the same manner as the 1-3 setting, but those pairs that are connected by a sequence of bonds  |                                                                                  |
+   |                                                                                                 | are calculated using the modified 1-4 methods described rather than the standard force calculations.                     |                                                                                  |
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
    | extras                                                                                          | Additional information to bundle with the object. Use for schema development and scratch space.                          | object                                                                           |
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -78,6 +73,8 @@ The following keys are optional for the ForceField specification.
    | substructs                                                                                      | A list of substructure names the particles belong to. E.g. [('ALA', 4), ('ACE', 0)] means atom1 belong to residue ALA    | array[array]                                                                     |
    |                                                                                                 | (alanine) with residue number 4, while atom2 belongs to residue ACE (acetyl) with residue number 0.                      |                                                                                  |
    +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+
 
 
 

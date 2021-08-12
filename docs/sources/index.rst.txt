@@ -73,7 +73,11 @@ Contents
    auto_forcefield
    auto_nonbonded
    auto_bonds
+   auto_angles
+   auto_dihedrals
 
 .. toctree::
    :maxdepth: 1
-   :caption: Collection Schemas
+   :caption: Collections
+   
+   auto_trajectory

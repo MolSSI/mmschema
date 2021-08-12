@@ -57,7 +57,8 @@
     <script src="static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="NonBonded schema" href="auto_nonbonded.html" />
+    <link rel="next" title="Angles schema" href="auto_angles.html" />
+    <link rel="prev" title="NonBonded EAM schema" href="auto_nonbonded_eam.html" />
   
    
 
@@ -245,14 +246,14 @@
     <li class="md-nav__item">
     
     
-      <a href="auto_forcefield.html" class="md-nav__link">ForceField schema</a>
+      <a href="auto_forcefield.html" class="md-nav__link">Forcefield schema</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="auto_nonbonded.html" class="md-nav__link">NonBonded schema</a>
+      <a href="auto_nonbonded.html" class="md-nav__link">Nonbonded schema</a>
       
     
     </li>
@@ -270,29 +271,9 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#auto-bonds--page-root" class="md-nav__link">Bonds schema</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#bonds" class="md-nav__link">Bonds</a><nav class="md-nav">
-              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#required-keys" class="md-nav__link">Required Keys</a>
         </li>
         <li class="md-nav__item"><a href="#optional-keys" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#gromos96" class="md-nav__link">Gromos96</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id1" class="md-nav__link">Required Keys</a>
-        </li>
-        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#harmonic" class="md-nav__link">Harmonic</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id3" class="md-nav__link">Required Keys</a>
-        </li>
-        <li class="md-nav__item"><a href="#id4" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
         </li></ul>
             </nav>
         </li>
@@ -301,6 +282,32 @@
 
   </ul>
 </nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_angles.html" class="md-nav__link">Angles schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_dihedrals.html" class="md-nav__link">Dihedrals schema</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Collections</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="auto_trajectory.html" class="md-nav__link">Trajectory schema</a>
       
     
     </li>
@@ -320,29 +327,9 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#auto-bonds--page-root" class="md-nav__link">Bonds schema</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#bonds" class="md-nav__link">Bonds</a><nav class="md-nav">
-              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#required-keys" class="md-nav__link">Required Keys</a>
         </li>
         <li class="md-nav__item"><a href="#optional-keys" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#gromos96" class="md-nav__link">Gromos96</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id1" class="md-nav__link">Required Keys</a>
-        </li>
-        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#harmonic" class="md-nav__link">Harmonic</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id3" class="md-nav__link">Required Keys</a>
-        </li>
-        <li class="md-nav__item"><a href="#id4" class="md-nav__link">Optional Keys</a>
-        </li></ul>
-            </nav>
         </li></ul>
             </nav>
         </li>
@@ -362,11 +349,9 @@
             
   <section id="bonds-schema">
 <h1 id="auto-bonds--page-root">Bonds schema<a class="headerlink" href="#auto-bonds--page-root" title="Permalink to this headline">¶</a></h1>
-<section id="bonds">
-<h2 id="bonds">Bonds<a class="headerlink" href="#bonds" title="Permalink to this headline">¶</a></h2>
 <p>A full description of the overall Bonds model.</p>
 <section id="required-keys">
-<h3 id="required-keys">Required Keys<a class="headerlink" href="#required-keys" title="Permalink to this headline">¶</a></h3>
+<h2 id="required-keys">Required Keys<a class="headerlink" href="#required-keys" title="Permalink to this headline">¶</a></h2>
 <dl>
 <dt>The following properties are required for the Bonds specification.</dt><dd><table>
 <colgroup>
@@ -381,9 +366,17 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>form</p></td>
-<td><p>Name or form of the potential.</p></td>
+<tr class="row-even"><td><p>connectivity</p></td>
+<td><p>Particle indices  or names e.g. types for each bond and the bond order: (index1, index2, order).</p></td>
+<td><p>array[array]</p></td>
+</tr>
+<tr class="row-odd"><td><p>form</p></td>
+<td><p>Name or form of the potential. See cls.supported_potentials() for available potentials.</p></td>
 <td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>lengths</p></td>
+<td><p>Equilibrium bond lengths. Default unit is Angstroms.</p></td>
+<td><p>array[number]</p></td>
 </tr>
 <tr class="row-odd"><td><p>params</p></td>
 <td><p>Specific force field parameters model.</p></td>
@@ -395,7 +388,7 @@
 </dl>
 </section>
 <section id="optional-keys">
-<h3 id="optional-keys">Optional Keys<a class="headerlink" href="#optional-keys" title="Permalink to this headline">¶</a></h3>
+<h2 id="optional-keys">Optional Keys<a class="headerlink" href="#optional-keys" title="Permalink to this headline">¶</a></h2>
 <dl>
 <dt>The following keys are optional for the Bonds specification.</dt><dd><table>
 <colgroup>
@@ -410,127 +403,14 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>schema_name</p></td>
-<td><p>No description provided.</p></td>
-<td><p>string</p></td>
-</tr>
-<tr class="row-odd"><td><p>schema_version</p></td>
-<td><p>No description provided.</p></td>
-<td><p>integer</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</section>
-</section>
-<section id="gromos96">
-<h2 id="gromos96">Gromos96<a class="headerlink" href="#gromos96" title="Permalink to this headline">¶</a></h2>
-<p>A full description of the overall Gromos96 model.</p>
-<section id="id1">
-<h3 id="id1">Required Keys<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<dl>
-<dt>The following properties are required for the Gromos96 specification.</dt><dd><table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 41%"/>
-<col style="width: 27%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Key Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Field Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>spring</p></td>
-<td><p>Bond spring constant. Default unit is kJ/(mol*angstrom**2).</p></td>
-<td><p>array[number]</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</section>
-<section id="id2">
-<h3 id="id2">Optional Keys<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<dl>
-<dt>The following keys are optional for the Gromos96 specification.</dt><dd><table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 41%"/>
-<col style="width: 27%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Key Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Field Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>spring_units</p></td>
-<td><p>Bond spring constant unit.</p></td>
+<tr class="row-even"><td><p>lengths_units</p></td>
+<td><p>Equilibrium bond lengths unit.</p></td>
 <td><p>string</p></td>
 </tr>
 </tbody>
 </table>
 </dd>
 </dl>
-</section>
-</section>
-<section id="harmonic">
-<h2 id="harmonic">Harmonic<a class="headerlink" href="#harmonic" title="Permalink to this headline">¶</a></h2>
-<p>A full description of the overall Harmonic model.</p>
-<section id="id3">
-<h3 id="id3">Required Keys<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<dl>
-<dt>The following properties are required for the Harmonic specification.</dt><dd><table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 41%"/>
-<col style="width: 27%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Key Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Field Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>spring</p></td>
-<td><p>Bond spring constant. Default unit is kJ/(mol*angstrom**2).</p></td>
-<td><p>array[number]</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</section>
-<section id="id4">
-<h3 id="id4">Optional Keys<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<dl>
-<dt>The following keys are optional for the Harmonic specification.</dt><dd><table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 41%"/>
-<col style="width: 27%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Key Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Field Type</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>spring_units</p></td>
-<td><p>Bond spring constant unit.</p></td>
-<td><p>string</p></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl>
-</section>
 </section>
 </section>
 
@@ -544,7 +424,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="auto_nonbonded.html" title="NonBonded schema"
+            <a href="auto_nonbonded_eam.html" title="NonBonded EAM schema"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -553,10 +433,21 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> NonBonded schema </span>
+                      class="md-footer-nav__direction"> Previous </span> NonBonded EAM schema </span>
               </div>
             </a>
           
+          
+            <a href="auto_angles.html" title="Angles schema"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Angles schema </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
           
         </a>
         
