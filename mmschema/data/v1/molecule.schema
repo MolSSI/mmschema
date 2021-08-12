@@ -3,7 +3,7 @@
     "name": "mmschema_molecule", 
     "version": 1,
     "title": "Molecule",
-    "description": "A representation of a molecule in particle (coarse-grained) and molecular mechanics.",
+    "description": "Representation of a molecule in particle (coarse-grained) and molecular mechanics.",
     "type": "object",
     "properties": {
         "schema_name": {
