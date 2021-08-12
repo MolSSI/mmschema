@@ -197,7 +197,8 @@
                 {
                     "$ref": "#/definitions/Provenance"
                 }
-            ]
+            ],
+            "type": "object"
         },
         "extras": {
             "title": "Extras",

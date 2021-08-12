@@ -39,7 +39,8 @@
                 {
                     "$ref": "#/definitions/Identifiers"
                 }
-            ]
+            ],
+            "type": "object"
         },
         "comment": {
             "title": "Comment",
@@ -180,7 +181,8 @@
                 {
                     "$ref": "#/definitions/Provenance"
                 }
-            ]
+            ],
+            "type": "object"
         },
         "extras": {
             "title": "Extras",
@@ -364,5 +366,6 @@
                 "creator"
             ]
         }
-    }
+    },
+    "required": ["symbols", "atomic_numbers"]
 }
