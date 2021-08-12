@@ -1,0 +1,49 @@
+{
+    "title": "EAM",
+    "description": "Parameters\n----------\nembed : Array\n    Array of embedding (discretized) energy terms. Default unit is kJ/mol.\nembed_units : str, Default: kJ/mol\n    Units for the embedding energy term.\npotential : Array\n    Array of (discretized) pair potential interaction functions. Default unit is kJ/mol.\npair_units : str, Default: kJ/mol\n    Units for the pair potential interaction term.\ndensity : Array\n    Array of (discretized) atomic electron densities.",
+    "type": "object",
+    "properties": {
+        "embed": {
+            "title": "Embed",
+            "description": "Array of embedding (discretized) energy terms. Default unit is kJ/mol.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "embed_units": {
+            "title": "Embed Units",
+            "description": "Units for the embedding energy term.",
+            "default": "kJ/mol",
+            "type": "string"
+        },
+        "potential": {
+            "title": "Potential",
+            "description": "Array of (discretized) pair potential interaction functions. Default unit is kJ/mol.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "pair_units": {
+            "title": "Pair Units",
+            "description": "Units for the pair potential interaction term.",
+            "default": "kJ/mol",
+            "type": "string"
+        },
+        "density": {
+            "title": "Density",
+            "description": "Array of (discretized) atomic electron densities.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "required": [
+        "embed",
+        "potential",
+        "density"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+    "title": "LennardJones",
+    "description": "Parameters\n----------\nepsilon : Array\n    The epsilon (well depth) Lennard-Jones parameter. Default unit is kJ/mol.\nepsilon_units : str, Default: kJ/mol\n    Units for the Lennard-Jones epsilon (well depth) constant.\nsigma : Array\n    The distance at which the Lennard-Jones potential is 0. Default unit is angstroms.\nsigma_units : str, Default: angstrom\n    Units for the Lennard-Jones sigma constant.",
+    "type": "object",
+    "properties": {
+        "epsilon": {
+            "title": "Epsilon",
+            "description": "The epsilon (well depth) Lennard-Jones parameter. Default unit is kJ/mol.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "epsilon_units": {
+            "title": "Epsilon Units",
+            "description": "Units for the Lennard-Jones epsilon (well depth) constant.",
+            "default": "kJ/mol",
+            "type": "string"
+        },
+        "sigma": {
+            "title": "Sigma",
+            "description": "The distance at which the Lennard-Jones potential is 0. Default unit is angstroms.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "sigma_units": {
+            "title": "Sigma Units",
+            "description": "Units for the Lennard-Jones sigma constant.",
+            "default": "angstrom",
+            "type": "string"
+        }
+    },
+    "required": [
+        "epsilon",
+        "sigma"
+    ],
+    "additionalProperties": false
+}
