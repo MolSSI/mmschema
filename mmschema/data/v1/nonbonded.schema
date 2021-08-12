@@ -1,0 +1,22 @@
+{
+    "title": "NonBonded",
+    "description": "Model that describes non-bonded interactions between particles.\n\nParameters\n----------\nform : str\n    Name or form of the potential. See cls.supported_potentials() for available potentials.\nparams : Any\n    Specific force field parameters model.",
+    "type": "object",
+    "properties": {
+        "form": {
+            "title": "Form",
+            "description": "Name or form of the potential. See cls.supported_potentials() for available potentials.",
+            "type": "string"
+        },
+        "params": {
+            "title": "Params",
+            "description": "Specific force field parameters model.",
+            "type": "object"
+        }
+    },
+    "required": [
+        "form",
+        "params"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,79 @@
+{
+    "title": "Angles",
+    "description": "Parameters\n----------\nform : str\n    Name or form of the potential. See cls.supported_potentials() for available potentials.\nparams : Any\n    Specific force field parameters model.\nangles : Array\n    Equilibrium angles. Default unit is degrees.\nangles_units : str, Default: degrees\n    Equilibrium angle units.\nconnectivity : List[Tuple[Union[int, str], Union[int, str], Union[int, str]]]\n    Particle indices for each angle.",
+    "type": "object",
+    "properties": {
+        "form": {
+            "title": "Form",
+            "description": "Name or form of the potential. See cls.supported_potentials() for available potentials.",
+            "type": "string"
+        },
+        "params": {
+            "title": "Params",
+            "description": "Specific force field parameters model.",
+            "type": "object"
+        },
+        "angles": {
+            "title": "Angles",
+            "description": "Equilibrium angles. Default unit is degrees.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "angles_units": {
+            "title": "Angles Units",
+            "description": "Equilibrium angle units.",
+            "default": "degrees",
+            "type": "string"
+        },
+        "connectivity": {
+            "title": "Connectivity",
+            "description": "Particle indices for each angle.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "form",
+        "params",
+        "angles",
+        "connectivity"
+    ],
+    "additionalProperties": false
+}

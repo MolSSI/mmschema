@@ -1,0 +1,96 @@
+{
+    "title": "Dihedrals",
+    "description": "Parameters\n----------\nform : str\n    Name or form of the potential. See cls.supported_potentials() for available potentials.\nparams : Any\n    Specific force field parameters model.\nangles : Array, Optional\n    Equilibrium dihedral angles. Default unit is degrees.\nangles_units : str, Default: degrees\n    Equilibrium dihedral angle units.\nconnectivity : List[Tuple[Union[int, str], Union[int, str], Union[int, str], Union[int, str]]]\n    Particle indices for each dihedral angle.\nweights : Array, Optional\n    Something to consider later on? Ses CHARMM dihedral_style for LAMMPS.",
+    "type": "object",
+    "properties": {
+        "form": {
+            "title": "Form",
+            "description": "Name or form of the potential. See cls.supported_potentials() for available potentials.",
+            "type": "string"
+        },
+        "params": {
+            "title": "Params",
+            "description": "Specific force field parameters model.",
+            "type": "object"
+        },
+        "angles": {
+            "title": "Angles",
+            "description": "Equilibrium dihedral angles. Default unit is degrees.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "angles_units": {
+            "title": "Angles Units",
+            "description": "Equilibrium dihedral angle units.",
+            "default": "degrees",
+            "type": "string"
+        },
+        "connectivity": {
+            "title": "Connectivity",
+            "description": "Particle indices for each dihedral angle.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "weights": {
+            "title": "Weights",
+            "description": "Something to consider later on? Ses CHARMM dihedral_style for LAMMPS.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "required": [
+        "form",
+        "params",
+        "connectivity"
+    ],
+    "additionalProperties": false
+}

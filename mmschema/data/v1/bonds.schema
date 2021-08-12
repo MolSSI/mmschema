@@ -1,0 +1,72 @@
+{
+    "title": "Bonds",
+    "description": "Parameters\n----------\nform : str\n    Name or form of the potential. See cls.supported_potentials() for available potentials.\nparams : Any\n    Specific force field parameters model.\nlengths : Array\n    Equilibrium bond lengths. Default unit is Angstroms.\nlengths_units : str, Default: angstroms\n    Equilibrium bond lengths unit.\nconnectivity : List[Tuple[Union[int, str], Union[int, str], float]]\n    Particle indices  or names e.g. types for each bond and the bond order: (index1, index2, order).",
+    "type": "object",
+    "properties": {
+        "form": {
+            "title": "Form",
+            "description": "Name or form of the potential. See cls.supported_potentials() for available potentials.",
+            "type": "string"
+        },
+        "params": {
+            "title": "Params",
+            "description": "Specific force field parameters model.",
+            "type": "object"
+        },
+        "lengths": {
+            "title": "Lengths",
+            "description": "Equilibrium bond lengths. Default unit is Angstroms.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "lengths_units": {
+            "title": "Lengths Units",
+            "description": "Equilibrium bond lengths unit.",
+            "default": "angstroms",
+            "type": "string"
+        },
+        "connectivity": {
+            "title": "Connectivity",
+            "description": "Particle indices  or names e.g. types for each bond and the bond order: (index1, index2, order).",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "number"
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "form",
+        "params",
+        "lengths",
+        "connectivity"
+    ],
+    "additionalProperties": false
+}
