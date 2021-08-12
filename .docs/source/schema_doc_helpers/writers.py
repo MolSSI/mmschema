@@ -14,7 +14,7 @@ def write_subsection(data, header):
 def write_subsubsection(data, header):
     data.append("")
     data.append(header)
-    data.append("^" * len(header))
+    data.append("~" * len(header))
     data.append("")
 
 
