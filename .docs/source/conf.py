@@ -88,9 +88,33 @@ release = ""
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.mathjax",
+    # from Sphinx
+    'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.graphviz',
+    'sphinx_autodoc_typehints',
+    # from Astropy
+    'sphinx_automodapi.automodapi',
+    'sphinx_automodapi.automodsumm',
+    'sphinx_automodapi.smart_resolver',
 ]
+
+autosummary_generate = True
+automodapi_toctreedirnm = 'api'
+#numpydoc_show_class_members = False
+#automodsumm_inherited_members = True
+autodoc_typehints = "description"
+napoleon_use_param = True
+napoleon_use_rtype = True
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -125,22 +149,19 @@ pygments_style = "sphinx"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_material"  # "asteroid_sphinx_theme"
+html_theme = "sphinx_rtd_theme"  # "asteroid_sphinx_theme"
 html_title = "MMSchema"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-    "nav_title": "A schema for Molecular Mechanics",
-    "color_primary": "blue-grey",
-    "color_accent": "light-black",
-    "repo_url": "https://github.com/MolSSI/mmschema",
-    "repo_name": "mmschema",
-    "globaltoc_depth": 1,
-    "globaltoc_collapse": True,  # False,
-    "globaltoc_includehidden": True,
-    "logo_icon": "&#9783",
+    "logo_only": True,
+    "display_version": False,
+    "style_external_links": False,
+    "style_nav_header_background": "light-blue",
+    "sticky_navigation": True,
+    "collapse_navigation": False,
 }
 
 html_sidebars = {
@@ -166,7 +187,7 @@ html_static_path = ["_static"]
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "QC_JSON_Schemadoc"
+htmlhelp_basename = "MM_JSON_Schemadoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -192,9 +213,9 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "QC_JSON_Schema.tex",
-        "QC_JSON_Schema Documentation",
-        "QC_JSON_Schema",
+        "MM_JSON_Schema.tex",
+        "Mm_JSON_Schema Documentation",
+        "MM_JSON_Schema",
         "manual",
     ),
 ]
@@ -205,7 +226,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "QC_JSON_Schema", "QC_JSON_Schema Documentation", [author], 1)
+    (master_doc, "MM_JSON_Schema", "Mm_JSON_Schema Documentation", [author], 1)
 ]
 
 
@@ -217,11 +238,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "QC_JSON_Schema",
-        "QC_JSON_Schema Documentation",
+        "MM_JSON_Schema",
+        "MM_JSON_Schema Documentation",
         author,
-        "QC_JSON_Schema",
-        "A schema for Quantum Chemistry",
+        "MM_JSON_Schema",
+        "A schema for Particle & Molecular Mechanics",
         "Miscellaneous",
     ),
 ]
