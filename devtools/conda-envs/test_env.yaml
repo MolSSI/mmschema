@@ -22,4 +22,6 @@ dependencies:
     - git+https://github.com/MolSSI/mm_data.git
     - qcelemental
     - sphinx
-    - sphinx-material
+    - sphinx-rtd-theme
+    - sphinx_autodoc_typehints
+    - sphinx_automodapi
