@@ -1,9 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "name": "mmschema_molecule", 
-    "version": 1,
     "title": "Molecule",
-    "description": "Representation of a molecule in particle (coarse-grained) and molecular mechanics.",
+    "description": "A representation of a Molecule in MM. This model contains data for symbols, geometry, connectivity, charges,\n    residues, etc. while also supporting a wide array of I/O and manipulation capabilities. Charges, masses, geometry,\n    and velocities are truncated to 4, 6, 8, and 8 decimal places, respectively, to assist with duplicate detection.\n\n\nParameters\n----------\nschema_name : ConstrainedStrValue, Default: mmschema_molecule\n    The MMSchema specification to which this model conforms. Explicitly fixed as mmschema_molecule.\nschema_version : int, Default: 1\n    The version number of ``schema_name`` to which this model conforms.\nsymbols : Array, Optional\n    An ordered (natom,) array-like object of particle symbols. The index of this attribute sets the order for all other per-particle setting like ``geometry`` and the first dimension of ``geometry``.\nname : str, Optional\n    Common or human-readable name to assign to this molecule. This field can be arbitrary; see ``identifiers`` for well-defined labels.\nidentifiers : :class:`Identifiers`, Optional\n    An optional dictionary of additional identifiers by which this molecule can be referenced, such as INCHI, canonical SMILES, etc. See the :class:``Identifiers`` model for more details.\ncomment : str, Optional\n    Additional comments for this molecule. Intended for pure human/user consumption and clarity.\nndim : int, Default: 3\n    Number of spatial dimensions.\natom_labels : Array, Optional\n    Additional per-atom labels as an array of strings. Typical use is in model conversions, such as Elemental <-> Molpro and not typically something which should be user assigned. See the ``comments`` field for general human-consumable text to affix to the molecule.\natomic_numbers_ : Array, Optional\n    An optional ordered 1-D array-like object of atomic numbers of shape (nat,). Index matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Values are inferred from the ``symbols`` list if not explicitly set. Ghostedness should be indicated through ``real`` field, not zeros here.\nmass_numbers : Array, Optional\n    An optional ordered 1-D array-like object of atomic *mass* numbers of shape (nat). Index matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Values are inferred from the most common isotopes of the ``symbols`` list if not explicitly set. If single isotope not (yet) known for an atom, -1 is placeholder.\nmasses_ : Array, Optional\n    The ordered array of particle masses. Index order matches the 0-indexed indices of all other per-atom fields like ``symbols`` and ``real``. If this is not provided, the mass of each atom is inferred from its most common isotope. If this is provided, it must be the same length as ``symbols`` but can accept ``None`` entries for standard masses to infer from the same index in the ``symbols`` field.\nmasses_units : str, Default: amu\n    Units for atomic masses. Defaults to unified atomic mass unit.\nmolecular_charge : float, Default: 0.0\n    The net electrostatic charge of the molecule. Default unit is elementary charge.\nmolecular_charge_units : str, Default: e\n    Units for molecular charge. Defaults to elementary charge.\ngeometry : Array, Optional\n    An ordered (natom*ndim,) array for XYZ atomic coordinates. Default unit is Angstrom.\ngeometry_units : str, Default: angstrom\n    Units for atomic geometry. Defaults to Angstroms.\nvelocities : Array, Optional\n    An ordered (natoms*ndim,) array for XYZ atomic velocities. Default unit is Angstroms/femtoseconds.\nvelocities_units : str, Default: angstrom/fs\n    Units for atomic velocities. Defaults to Angstroms/femtoseconds.\nconnectivity : Array, Optional\n    A list of bonds within the molecule. Each entry is a tuple of ``(atom_index_A, atom_index_B, bond_order)`` where the ``atom_index`` matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Bonds may be freely reordered and inverted.\nsubstructs : Array, Optional\n    A list of (name, num) of connected atoms constituting the building block (e.g. monomer) of the structure (e.g. a polymer). Order follows atomic indices from 0 till Natoms-1. E.g. [('ALA', 4), ...] means atom1 belongs to aminoacid alanine with residue number 4. Substruct name is max 4 characters.\nprovenance : :class:`Provenance`, Default: {'creator': 'MMElemental', 'version': '0+untagged.717.g4d7ee54', 'routine': 'mmelemental.models.molecule.mm_mol'}\n    The provenance information about how this object (and its attributes) were generated, provided, and manipulated.\nextras : Dict[Any], Optional\n    Additional information to bundle with the molecule. Use for schema development and scratch space.",
     "type": "object",
     "properties": {
         "schema_name": {
@@ -39,8 +36,7 @@
                 {
                     "$ref": "#/definitions/Identifiers"
                 }
-            ],
-            "type": "object"
+            ]
         },
         "comment": {
             "title": "Comment",
@@ -136,37 +132,17 @@
         "connectivity": {
             "title": "Connectivity",
             "description": "A list of bonds within the molecule. Each entry is a tuple of ``(atom_index_A, atom_index_B, bond_order)`` where the ``atom_index`` matches the 0-indexed indices of all other per-atom settings like ``symbols`` and ``real``. Bonds may be freely reordered and inverted.",
-            "minItems": 1,
             "type": "array",
             "items": {
-                "type": "array",
-                "items": [
-                    {
-                        "type": "integer"
-                    },
-                    {
-                        "type": "integer"
-                    },
-                    {
-                        "type": "number"
-                    }
-                ]
+                "Type": "array"
             }
         },
         "substructs": {
             "title": "Substructs",
-            "description": "A list of (name, num) of connected atoms constituting the building block (e.g. monomer) of the structure (e.g. a polymer). Order follows atomic indices from 0 till Natoms-1. E.g. [('ALA', 4), ...] means atom1 belongs to aminoacid alanine with residue number 4.",
+            "description": "A list of (name, num) of connected atoms constituting the building block (e.g. monomer) of the structure (e.g. a polymer). Order follows atomic indices from 0 till Natoms-1. E.g. [('ALA', 4), ...] means atom1 belongs to aminoacid alanine with residue number 4. Substruct name is max 4 characters.",
             "type": "array",
             "items": {
-                "type": "array",
-                "items": [
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "type": "integer"
-                    }
-                ]
+                "Type": "array"
             }
         },
         "provenance": {
@@ -174,24 +150,23 @@
             "description": "The provenance information about how this object (and its attributes) were generated, provided, and manipulated.",
             "default": {
                 "creator": "MMElemental",
-                "version": "0+untagged.709.g7c6bace",
+                "version": "0+untagged.717.g4d7ee54",
                 "routine": "mmelemental.models.molecule.mm_mol"
             },
             "allOf": [
                 {
                     "$ref": "#/definitions/Provenance"
                 }
-            ],
-            "type": "object"
+            ]
         },
         "extras": {
             "title": "Extras",
             "description": "Additional information to bundle with the molecule. Use for schema development and scratch space.",
-            "default": {},
             "type": "object"
         }
     },
     "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
         "ChemCode": {
             "title": "ChemCode",
@@ -212,7 +187,8 @@
             "required": [
                 "code"
             ],
-            "additionalProperties": false
+            "additionalProperties": false,
+            "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "Identifiers": {
             "title": "Identifiers",
@@ -339,7 +315,8 @@
                     ]
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "Provenance": {
             "title": "Provenance",
@@ -364,8 +341,8 @@
             },
             "required": [
                 "creator"
-            ]
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#"
         }
-    },
-    "required": ["symbols", "atomic_numbers"]
+    }
 }
