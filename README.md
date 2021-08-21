@@ -2,7 +2,12 @@
 
 [![GitHub Actions Build Status](https://github.com/MolSSI/mmschema/workflows/CI/badge.svg)](https://github.com/MolSSI/mmschema/actions?query=workflow%3ACI)
 
-A specification based on [JSON schema](https://json-schema.org) for Molecular Mechanics. Supported formats:
+A vocabulary specification for Molecular Mechanics. Supported schemas:
+
+- [JSON](https://json-schema.org)
+- [HDF5](https://support.hdfgroup.org/HDF5/doc1.6/UG/03_Model.html)
+
+Supported formats:
 
 - [JSON](https://www.json.org)
 - [YAML](https://yaml.org)
