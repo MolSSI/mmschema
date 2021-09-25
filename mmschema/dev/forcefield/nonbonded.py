@@ -35,6 +35,6 @@ NonBonded = {
 for (
     name,
     obj,
-) in mmelemental.models.forcefield.nonbonded.NonBonded.supported_potentials().items():
+) in mmelemental.models.forcefield.nonbonded.NonBonded.supported_potentials.items():
     __all__.append(name)
     setattr(current_module, name, obj.schema())

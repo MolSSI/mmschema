@@ -35,6 +35,6 @@ Bonds = {
 for (
     name,
     obj,
-) in mmelemental.models.forcefield.bonded.Bonds.supported_potentials().items():
+) in mmelemental.models.forcefield.bonded.Bonds.supported_potentials.items():
     __all__.append(name)
     setattr(current_module, name, obj.schema())
