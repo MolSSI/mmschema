@@ -22,11 +22,11 @@ _aliases = {
 }
 
 
-def list_versions(schema_type):
+def get_versions(schema_type):
     """
-    Lists all current JSON schema versions.
+    Lists all currently available schema versions.
     """
-    return [1, "dev"]
+    return _supported_versions
 
 
 def get_schema(schema_type, version="dev"):
