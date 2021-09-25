@@ -58,13 +58,14 @@ def gen_rst(model_name, mode="w", filename=None, version=1, alias=None, hyperlin
         sh.write_subsection(mfile, "Potential Schemas")
 
     for key, link in hyperlinks.items():
-        #mfile.extend(f"- :doc:`{key} <{link}>` \n".splitlines())
-        mfile.extend([".. toctree::", f"   :caption: {key}", "   :maxdepth: 1\n", f"   {link}\n"])
+        # mfile.extend(f"- :doc:`{key} <{link}>` \n".splitlines())
+        mfile.extend(
+            [".. toctree::", f"   :caption: {key}", "   :maxdepth: 1\n", f"   {link}\n"]
+        )
 
     mfile.extend("\n")
 
-    #for link in hyperlinks.values():
-
+    # for link in hyperlinks.values():
 
     # Write out the file
     filename = filename or f"auto_{model_name.lower()}.rst"

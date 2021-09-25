@@ -55,7 +55,8 @@ def write_key_table(top_file, properties, keys=None):
         elif "$ref" in value:
             dtype = value["$ref"]
         else:
-            raise ValueError(f"type not found in {key}")
+            dtype = "object" # wild guess?
+            #raise ValueError(f"type not found in {key}")
 
         if "description" in value:
             description = value["description"]
@@ -70,7 +71,9 @@ def write_key_table(top_file, properties, keys=None):
             elif "$ref" in value["items"]:
                 arr_type = value["items"]["$ref"]
             else:
-                raise ValueError(f"No dtype for items in array {key}")
+                raise ValueError(
+                    f"No dtype for items in array {key} of value {value['items']}."
+                )
             dtype = "array[" + arr_type + "]"
 
         # Figure out the needed slices

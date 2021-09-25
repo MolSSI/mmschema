@@ -15,7 +15,7 @@ What is MMSchema?
    image:: images/mmschema.png
    :alt: MMSchema
 
-Currently, MMSchema is a `JSON <https://www.json.org>`_ schema; comptability with the `hdf5 <https://www.hdfgroup.org/solutions/hdf5>`_ format is being developed as well.
+Currently, MMSchema is a `JSON <https://www.json.org>`_ schema; comptability with the `hdf5 <https://www.hdfgroup.org/solutions/hdf5>`_ data format is being developed as well.
 
 
 Core Models
@@ -32,8 +32,8 @@ Core Models
 
 .. image:: images/objects.png
    :alt: statics
+   :scale: 50 %
    :align: center
-   :width: 850
 
 .. container:: text-justify
 
@@ -42,12 +42,12 @@ Core Models
 
 .. container:: text-justify
 
-   Each object in MMSchema is uniquely defined by a set of fields and (when suitable) their associated units as well. The schema is designed to be flexible as much as
-   possible by providing a general specification for computational particle mechanics, but **MMSchema does not standardize any specific workflow**. Instead, MMSchema strives to provide a starting point
-   for specific application areas based on or related to MM such as energy minimization, force field assignment and construction, molecular dynamics, advanced sampling, ... to name a few.
-   The schemas for these domains or applications are handled by `MMIC <https://mm-portal.netlify.app/mmic>`_ components that define the input and output models for each procedure. Since MMSchema is not 
-   restricted to the atomic scale, it can also be used for coarse-graining as well as multiscale methods that evolve multiple spatial and/or temporal scales.
-   In fact, *any particle-based Newtonian method can use MMSchema and further customize/extend it*.
+   Each object in MMSchema is uniquely defined by a set of fields and (when suitable) their associated units as well. Furthermore, each core model is completely independent of any other model.
+   The schema is designed to be flexible as much as possible by providing a general specification for computational particle mechanics, but **MMSchema does not standardize any specific workflow**. 
+   Instead, MMSchema strives to provide a starting point for specific application areas based on or related to MM such as energy minimization, force field assignment and construction, molecular 
+   dynamics, advanced sampling, ..., to name a few. The schemas for these domains or applications are handled by `MMIC <https://github.com/MolSSI/mmic>`_ components that define the input and 
+   output models for each procedure. Since MMSchema is not restricted to the atomic scale, it can also be used for coarse-graining as well as multiscale methods that evolve multiple spatial and/or 
+   temporal scales. In fact, *any particle-based method can use MMSchema and further customize/extend it*.
 
 
 Contents
@@ -62,7 +62,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :caption: Topology
+   :caption: Structure
  
    auto_molecule
 
