@@ -4,10 +4,10 @@
 
 A vocabulary specification for Molecular Mechanics. Supported schemas:
 
-- [JSON](https://json-schema.org)
-- [HDF5](https://support.hdfgroup.org/HDF5/doc1.6/UG/03_Model.html)
+- [JSON Schema](https://json-schema.org)
+- [HDF5 Schema](https://support.hdfgroup.org/HDF5/doc1.6/UG/03_Model.html)
 
-Supported formats:
+Supported file formats:
 
 - [JSON](https://www.json.org)
 - [YAML](https://yaml.org)
