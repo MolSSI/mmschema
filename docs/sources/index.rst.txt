@@ -32,7 +32,7 @@ Core Models
 
 .. image:: images/objects.png
    :alt: statics
-   :scale: 50 %
+   :scale: 100 %
    :align: center
 
 .. container:: text-justify
