@@ -17,7 +17,7 @@ dependencies:
     - h5json
     - codecov
     - pydantic
-    - git+https://github.com/MolSSI/cmselemental.git
+    - git+https://github.com/MolSSI/cmselemental.git@v0.2.0
     - git+https://github.com/MolSSI/mmelemental.git
     - git+https://github.com/MolSSI/mm_data.git
     - qcelemental
