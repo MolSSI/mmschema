@@ -3,7 +3,7 @@ Examples
 
 Several examples of completed schema. As the input is duplicated in the output
 the corresponding input of these schema are the input fields alone.
-Effectively, this is all keys above the "provenance" field. For clarify all
+Effectively, this is all keys above the "provenance" field. For clarity, all
 array-based values have been truncated to four decimal places.
 
 Water SPC Model
@@ -45,10 +45,10 @@ Water SPC Model
             0.0,
             2.82,
             2.09,
-            0.5800000000000001,
+            0.58,
             1.18,
             2.09,
-            0.5800000000000001
+            0.58
         ],
         "geometry_units": "angstrom",
         "connectivity": [
