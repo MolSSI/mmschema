@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is MMSchema? &mdash; MMSchema</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: light-blue" >
+            <a href="#" class="icon icon-home"> MMSchema
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#water-spc-model">Water SPC Model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Structure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_molecule.html">Molecule schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_molecule.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_molecule.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ForceField</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_forcefield.html">Forcefield schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_forcefield.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_forcefield.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_nonbonded.html">Nonbonded schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#optional-keys">Optional Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#potential-schemas">Potential Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_nonbonded_lj.html">NonBonded LennardJones schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_lj.html#required-keys">Required Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_lj.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auto_nonbonded_eam.html">NonBonded EAM schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_eam.html#required-keys">Required Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_eam.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_bonds.html">Bonds schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_bonds.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_bonds.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_angles.html">Angles schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_angles.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_angles.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_dihedrals.html">Dihedrals schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_dihedrals.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_dihedrals.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_trajectory.html">Trajectory schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_trajectory.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_trajectory.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: light-blue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">MMSchema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>What is MMSchema?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-is-mmschema">
+<h1>What is MMSchema?<a class="headerlink" href="#what-is-mmschema" title="Permalink to this headline"></a></h1>
+<div class="text-justify docutils container">
+<p>MMSchema is a vocabulary specification for classical particle mechanics with emphasis on molecular systems. The schema provides standardized representations of data objects in
+molecular mechanics that enable interoperability between different codes without restricting any particular workflow.</p>
+</div>
+<p>Currently, MMSchema is a <a class="reference external" href="https://www.json.org">JSON</a> schema; comptability with the <a class="reference external" href="https://www.hdfgroup.org/solutions/hdf5">hdf5</a> data format is being developed as well.</p>
+</section>
+<section id="core-models">
+<h1>Core Models<a class="headerlink" href="#core-models" title="Permalink to this headline"></a></h1>
+<div class="text-justify docutils container">
+<p>MMSchema adopts an object-oriented view of classical mechanics by dividing it into its constituent core objects: initial state, inter-particle potential,
+and final state (statics) or trajectory (dynamics). Each core model represents a building block that is an integral part of the computation. The 3 core models in MMSchema are:</p>
+<ul class="simple">
+<li><p>Molecule: represents a basic molecule object for MM, or more generally the N-body state in classical mechanics.</p></li>
+<li><p>ForceField: represents force fields for MM, or more generally inter-particle potentials in classical mechanics.</p></li>
+<li><p>Trajectory: represents trajectories in dynamical systems.</p></li>
+</ul>
+</div>
+<a class="reference internal image-reference" href="images/objects.png"><img alt="statics" class="align-center" src="images/objects.png" style="width: 892.0px; height: 256.0px;" /></a>
+<div class="text-justify docutils container">
+<p>For classical statics, the MMSchema models <cite>Molecule</cite> and <cite>ForceField</cite> would represent the initial/final states and the inter-particle potential, respectively, as shown in the figure above.
+Likewise, <cite>Trajectory</cite> would represent simulation output of dynamical systems.</p>
+</div>
+<div class="text-justify docutils container">
+<p>Each object in MMSchema is uniquely defined by a set of fields and (when suitable) their associated units as well. Furthermore, each core model is completely independent of any other model.
+The schema is designed to be flexible as much as possible by providing a general specification for computational particle mechanics, but <strong>MMSchema does not standardize any specific workflow</strong>.
+Instead, MMSchema strives to provide a starting point for specific application areas based on or related to MM such as energy minimization, force field assignment and construction, molecular
+dynamics, advanced sampling, …, to name a few. The schemas for these domains or applications are handled by <a class="reference external" href="https://github.com/MolSSI/mmic">MMIC</a> components that define the input and
+output models for each procedure. Since MMSchema is not restricted to the atomic scale, it can also be used for coarse-graining as well as multiscale methods that evolve multiple spatial and/or
+temporal scales. In fact, <em>any particle-based method can use MMSchema and further customize/extend it</em>.</p>
+</div>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Structure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_molecule.html">Molecule schema</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">ForceField</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_forcefield.html">Forcefield schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_nonbonded.html">Nonbonded schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_bonds.html">Bonds schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_angles.html">Angles schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_dihedrals.html">Dihedrals schema</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_trajectory.html">Trajectory schema</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #033e57;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #080f14;
+    }
+  </style>
+
+
+</body>
+</html>

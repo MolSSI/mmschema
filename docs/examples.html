@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; MMSchema</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Molecule schema" href="auto_molecule.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: light-blue" >
+            <a href="index.html" class="icon icon-home"> MMSchema
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#water-spc-model">Water SPC Model</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Structure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_molecule.html">Molecule schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_molecule.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_molecule.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ForceField</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_forcefield.html">Forcefield schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_forcefield.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_forcefield.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_nonbonded.html">Nonbonded schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#optional-keys">Optional Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_nonbonded.html#potential-schemas">Potential Schemas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_nonbonded_lj.html">NonBonded LennardJones schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_lj.html#required-keys">Required Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_lj.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auto_nonbonded_eam.html">NonBonded EAM schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_eam.html#required-keys">Required Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auto_nonbonded_eam.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_bonds.html">Bonds schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_bonds.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_bonds.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_angles.html">Angles schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_angles.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_angles.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_dihedrals.html">Dihedrals schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_dihedrals.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_dihedrals.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_trajectory.html">Trajectory schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_trajectory.html#required-keys">Required Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_trajectory.html#optional-keys">Optional Keys</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: light-blue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MMSchema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
+<p>Several examples of completed schema are provided below.
+For clarity, all array-based values have been truncated up to 4 decimal places.</p>
+<section id="water-spc-model">
+<h2>Water SPC Model<a class="headerlink" href="#water-spc-model" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;schema_name&quot;</span><span class="p">:</span> <span class="s2">&quot;mmschema_molecule&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;schema_version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;symbols&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;O&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;H&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;H&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;H2O&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ndim&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;atom_labels&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;OW&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;HW1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;HW2&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;atomic_numbers&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">8</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">1</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;masses&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">15.999</span><span class="p">,</span>
+        <span class="mf">1.0079</span><span class="p">,</span>
+        <span class="mf">1.0079</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;masses_units&quot;</span><span class="p">:</span> <span class="s2">&quot;dalton&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;molecular_charge&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;molecular_charge_units&quot;</span><span class="p">:</span> <span class="s2">&quot;elementary_charge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;formal_charges_units&quot;</span><span class="p">:</span> <span class="s2">&quot;elementary_charge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;partial_charges_units&quot;</span><span class="p">:</span> <span class="s2">&quot;elementary_charge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">2.0</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.0</span><span class="p">,</span>
+        <span class="mf">2.82</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.58</span><span class="p">,</span>
+        <span class="mf">1.18</span><span class="p">,</span>
+        <span class="mf">2.09</span><span class="p">,</span>
+        <span class="mf">0.58</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;geometry_units&quot;</span><span class="p">:</span> <span class="s2">&quot;angstrom&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;velocities_units&quot;</span><span class="p">:</span> <span class="s2">&quot;angstrom / femtosecond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;connectivity&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">,</span>
+            <span class="mf">1.0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">,</span>
+            <span class="mf">1.0</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;substructs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;HOH&quot;</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;HOH&quot;</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;HOH&quot;</span><span class="p">,</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;provenance&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="s2">&quot;MMElemental&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0+untagged.586.g645c496.dirty&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;routine&quot;</span><span class="p">:</span> <span class="s2">&quot;mmelemental.models.molecule.mm_mol&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;87bdbb331a17bf9b57bc1df4ce07a38830966629&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="auto_molecule.html" class="btn btn-neutral float-right" title="Molecule schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Molecular Sciences Software Institute.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #033e57;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #080f14;
+    }
+  </style>
+
+
+</body>
+</html>
