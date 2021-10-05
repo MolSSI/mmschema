@@ -1,10 +1,8 @@
 Examples
 ========
 
-Several examples of completed schema. As the input is duplicated in the output
-the corresponding input of these schema are the input fields alone.
-Effectively, this is all keys above the "provenance" field. For clarity, all
-array-based values have been truncated to four decimal places.
+Several examples of completed schema are provided below. 
+For clarity, all array-based values have been truncated up to 4 decimal places.
 
 Water SPC Model
 ~~~~~~~~~~~~~~~~
@@ -32,13 +30,15 @@ Water SPC Model
             1
         ],
         "masses": [
-            15.9994,
+            15.999,
             1.0079,
             1.0079
         ],
         "masses_units": "dalton",
         "molecular_charge": 0.0,
-        "molecular_charge_units": "e",
+        "molecular_charge_units": "elementary_charge",
+        "formal_charges_units": "elementary_charge",
+        "partial_charges_units": "elementary_charge",
         "geometry": [
             2.0,
             2.09,
@@ -51,6 +51,7 @@ Water SPC Model
             0.58
         ],
         "geometry_units": "angstrom",
+        "velocities_units": "angstrom / femtosecond",
         "connectivity": [
             [
                 0,
@@ -81,5 +82,6 @@ Water SPC Model
             "creator": "MMElemental",
             "version": "0+untagged.586.g645c496.dirty",
             "routine": "mmelemental.models.molecule.mm_mol"
-        }
+        },
+        "hash": "87bdbb331a17bf9b57bc1df4ce07a38830966629"
     }

@@ -8,8 +8,8 @@ What is MMSchema?
 
 .. container:: text-justify
 
-    MMSchema is a specification for classical particle mechanics with emphasis on molecular systems. The schema provides standardized data objects that enable interoperability between
-    different molecular mechanics codes without restricting any particular workflow.
+    MMSchema is a vocabulary specification for classical particle mechanics with emphasis on molecular systems. The schema provides standardized representations of data objects in
+    molecular mechanics that enable interoperability between different codes without restricting any particular workflow.
 
 .. 
    image:: images/mmschema.png
